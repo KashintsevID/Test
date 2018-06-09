@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock>when will this end</TextBlock>
+        <TextBlock>another day another try</TextBlock>
     </Grid>
 </Window>
