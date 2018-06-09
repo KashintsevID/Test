@@ -111,5 +111,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cycle.Info\Cycle.Info.csproj">
+      <Project>{B05FE3A2-C76B-4B0B-B6D8-4F4EF4813207}</Project>
+      <Name>Cycle.Info</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
