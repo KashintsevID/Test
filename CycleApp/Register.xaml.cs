@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cycle.Info;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace CycleApp
             }
             else
             {
-                User user = new User(WriteFullName1.Text, WriteEmail1.Text, WritePassword1.Password, false);
+                User user = new User(WriteFullName1.Text, WriteEmail1.Text, WritePassword1.Password, 0);
                 // users.Add(user);
                 Repository repo = new Repository();
                 bool b = false;
