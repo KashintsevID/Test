@@ -23,6 +23,16 @@ namespace CycleApp
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+
+        private void ButtonRegister_Click(object sender, RoutedEventArgs e)
+        {
+            var registerWindow = new Register();
+            registerWindow.Show();
+            Hide();
+
+
+
         }
     }
-}

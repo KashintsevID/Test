@@ -1,0 +1,60 @@
+﻿<Window x:Class="CycleApp.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CycleApp"
+        mc:Ignorable="d"
+         Title="Register" Height="600" Width="450">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8AA3D8" Offset="0"/>
+                <GradientStop Color="#FF1F436E" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=" 0.5*"/>
+            <RowDefinition Height=" Auto"/>
+            <RowDefinition Height=" Auto"/>
+            <RowDefinition Height=" Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width=" 0.3*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+        <Button Name="Back" Height=" 40" Width=" 40" Grid.Column=" 0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" >
+
+            <Image Source="Images/arrow-back-outline-128.png"></Image>
+
+        </Button>
+        <TextBlock Grid.Row=" 0" Grid.Column=" 1" Grid.ColumnSpan=" 3" TextAlignment="Center" FontFamily=" Times New Roman" FontSize=" 30" VerticalAlignment="Center"  Foreground="White" Margin="10 80 10 10">Fill in the following details</TextBlock>
+        <TextBox  Margin="20 5" Name="WriteFullName1" Grid.Column="2" Grid.ColumnSpan=" 3" Grid.Row=" 1"  FontSize=" 24" Height=" 50" FontFamily=" Times New Roman" ></TextBox>
+        <TextBox  Margin="20 5" Name="WriteEmail1" Grid.Column="2" Grid.ColumnSpan=" 3" FontSize=" 24" Grid.Row=" 2" Height=" 50" FontFamily=" Times New Roman"  ></TextBox>
+        <PasswordBox PasswordChar="." Margin="20 5" Name="WritePassword1" Grid.Column="2" Grid.ColumnSpan=" 3" FontSize=" 24" Grid.Row=" 3" Height=" 50" FontFamily=" Times New Roman"></PasswordBox>
+        <TextBlock Foreground="White" Margin=" 5" Grid.Column=" 0" Grid.ColumnSpan="2" Grid.Row=" 1" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily=" Times New Roman"  FontSize=" 24">Full name</TextBlock>
+        <TextBlock Foreground="White" Margin=" 5" Grid.Column=" 0" Grid.ColumnSpan="2" Grid.Row=" 2" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily=" Times New Roman"  FontSize=" 24">Email</TextBlock>
+        <TextBlock Foreground="White" Margin=" 5" Grid.Column=" 0" Grid.ColumnSpan="2" Grid.Row=" 3" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily=" Times New Roman"  FontSize=" 24">Password</TextBlock>
+
+        <StackPanel Grid.Row="4" Grid.Column=" 2">
+            <Button Margin="10 20 10 10 " Width=" 150" Height=" 40"  FontSize=" 24"  FontFamily=" Times New Roman" Click="Button_Click" >
+
+
+
+                Register
+            </Button>
+            <Button Margin="5" Width=" 150" Height=" 40" FontSize=" 24"  FontFamily=" Times New Roman" >
+                Cancel
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column=" 0" Grid.ColumnSpan="5" VerticalAlignment="Bottom" >
+            <Image Margin=" 20" Height="120" VerticalAlignment="Bottom" HorizontalAlignment="Right"  >
+            </Image>
+        </StackPanel>
+
+    </Grid>
+</Window>
