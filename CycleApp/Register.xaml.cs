@@ -1,5 +1,4 @@
-﻿using Cycle.Info;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 
 namespace CycleApp
 {
@@ -35,7 +33,7 @@ namespace CycleApp
             }
             else
             {
-                User user = new User(WriteFullName1.Text, WriteEmail1.Text, WritePassword1.Password, 0);
+                User user = new User(WriteFullName1.Text, WriteEmail1.Text, WritePassword1.Password, false);
                 // users.Add(user);
                 Repository repo = new Repository();
                 bool b = false;
