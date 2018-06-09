@@ -1,0 +1,173 @@
+﻿<Window x:Class="CycleApp.Display"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CycleApp"
+        mc:Ignorable="d"
+        Title="Display" Height="600" Width="460">
+    <TabControl Name="Menu" SelectionChanged="Menu_SelectionChanged">
+        <TabItem  Name="Account" Width=" 109" HorizontalAlignment="Left">
+
+            <TabItem.Header  >
+                <Image Height=" 30" Source="Images/Account.png" ></Image>
+            </TabItem.Header >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=" 80"/>
+                    <RowDefinition Height="70 " />
+                    <RowDefinition Height=" Auto"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175*"/>
+                    <ColumnDefinition Width="Auto"/>
+
+                </Grid.ColumnDefinitions>
+
+                <TextBox TextWrapping="Wrap" Text="User Name"  Name="UserName"   VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman"  HorizontalAlignment="Center"  TextChanged="UserName_TextChanged_1" Margin="106.289,0,64.212,0"  ></TextBox>
+                <Label  Margin=" 10  "  VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="14" FontFamily=" Times New Roman"  HorizontalAlignment="Left"  >Balance:</Label>
+                <TextBox Name="Balance" TextWrapping="Wrap"  Grid.Column="1" Grid.Row="1" Height=" 14" Width="100" HorizontalAlignment="Center"    Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
+
+
+                <Button Name="RedactorAccount" Content="Tooltip" Margin="40,40,39.711,40" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" >
+                    <Button.ToolTip >
+                        Make changes with your data
+                    </Button.ToolTip>
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Ellipse />
+                                <Image  Width="70" Source="Images/Account.png" />
+                                <Image  Source="Images/redactor.png" Height=" 20" Width=" 20" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin=" 5"></Image>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="0,0,0.115,0"  >
+                    <Button Name="TransferMoney" HorizontalAlignment="Left" Height=" 70"  FontSize="20"  FontFamily=" Times New Roman" Width=" 450" >
+                        Transfer money</Button>
+                    <Button Name="TakeBicycle"  Height=" 70"  FontSize="20"  FontFamily=" Times New Roman" Width=" 450" >
+                        Take bicycle
+                    </Button>
+                    <Button Name="LeaveBicycle"  Height=" 70"  FontSize="20"  FontFamily=" Times New Roman" Width=" 450" >
+                        Leave bicycle
+                    </Button>
+
+                    <Button Name="Exit" Content="Tooltip" Margin="0 50 0 0" >
+                        <Button.ToolTip>
+                            Go out from your account
+                        </Button.ToolTip>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="Images/exit.png" HorizontalAlignment="Left" Height=" 30"></Image>
+                                    <TextBlock FontSize="22" Width=" 70" Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Exit</TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+
+
+
+
+
+
+
+
+        <TabItem Name="Maps"  Width=" 109" HorizontalAlignment="Left"   >
+            <TabItem.Header >
+                <Image Height=" 30" Source="Images/location.png" ></Image>
+            </TabItem.Header>
+        </TabItem>
+
+
+
+
+
+
+
+
+
+        <TabItem Name="History"  Width=" 110"  HorizontalAlignment="Right">
+            <TabItem.Header >
+                <Image Height=" 30" Source="Images/bike.png" ></Image>
+            </TabItem.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock FontSize="22" Grid.Row="0" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="0 10" >History of your trips</TextBlock>
+                <DataGrid Grid.Row="1">
+
+                </DataGrid>
+            </Grid>
+
+
+
+
+        </TabItem>
+
+
+
+
+
+
+
+        <TabItem Name="Help" Width=" 110"  HorizontalAlignment="Right">
+            <TabItem.Header >
+                <Image Height=" 30" Source="Images/help.png" ></Image>
+            </TabItem.Header>
+            <StackPanel Orientation="Vertical">
+                <Button Name="Rules" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
+                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Rules of renting bicycles</TextBlock>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Name="Price">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
+                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Renting price</TextBlock>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Name="ContactsAndHelp">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
+                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Contacts and help</TextBlock>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Name="AboutOurCompany">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
+                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">About CYCLE</TextBlock>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+        </TabItem>
+    </TabControl>
+
+</Window>
+

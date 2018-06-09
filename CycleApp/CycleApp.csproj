@@ -64,9 +64,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Display.xaml.cs">
+      <DependentUpon>Display.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Rules of renting bicycles.xaml.cs">
+      <DependentUpon>Rules of renting bicycles.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Display.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,6 +90,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Rules of renting bicycles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,6 +124,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Account.png" />
+    <Resource Include="Images\arrow-back-outline-128.png" />
+    <Resource Include="Images\bike.png" />
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\help.png" />
+    <Resource Include="Images\location.png" />
+    <Resource Include="Images\redactor.png" />
+    <Resource Include="Images\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cycle.Info\Cycle.Info.csproj">
+      <Project>{B05FE3A2-C76B-4B0B-B6D8-4F4EF4813207}</Project>
+      <Name>Cycle.Info</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

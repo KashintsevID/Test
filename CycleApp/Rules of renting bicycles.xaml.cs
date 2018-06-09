@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CycleApp
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Rules_of_renting_bicycles.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Rules_of_renting_bicycles : Window
     {
-        public MainWindow()
+        public Rules_of_renting_bicycles()
         {
             InitializeComponent();
-
-        }
-
-        private void ButtonRegister_Click(object sender, RoutedEventArgs e)
-        {
-            var registerWindow = new Register();
-            registerWindow.Show();
-            Hide();
         }
     }
 }
