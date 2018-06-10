@@ -1,3 +1,18 @@
 ﻿{
-
+	"Bicycles": [
+		{
+			"id": 0,
+			"stationId": 0,
+			"currentSlot": 0
+		}
+	],
+	"Stations": [
+		{
+			"id": 0,
+			"adress": null,
+			"nearestMetroStation": null,
+			"numberOfSlots": 0,
+			"numberOfBikes": 0
+		}
+	]
 }
