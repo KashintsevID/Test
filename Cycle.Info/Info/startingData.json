@@ -1,18 +1,193 @@
 ﻿{
 	"Bicycles": [
 		{
-			"id": 0,
-			"stationId": 0,
-			"currentSlot": 0
+			"id": 1,
+			"stationId": 1,
+			"currentSlot": 1
+		},
+		{
+			"id": 2,
+			"stationId": 1,
+			"currentSlot": 2
+		},
+		{
+			"id": 3,
+			"stationId": 1,
+			"currentSlot": 3
+		},
+		{
+			"id": 4,
+			"stationId": 1,
+			"currentSlot": 4
+		},
+		{
+			"id": 5,
+			"stationId": 1,
+			"currentSlot": 5
+		},
+		{
+			"id": 6,
+			"stationId": 1,
+			"currentSlot": 6
+		},
+		{
+			"id": 7,
+			"stationId": 2,
+			"currentSlot": 1
+		},
+		{
+			"id": 8,
+			"stationId": 2,
+			"currentSlot": 2
+		},
+		{
+			"id": 9,
+			"stationId": 2,
+			"currentSlot": 3
+		},
+		{
+			"id": 10,
+			"stationId": 3,
+			"currentSlot": 1
+		},
+		{
+			"id": 11,
+			"stationId": 3,
+			"currentSlot": 2
+		},
+		{
+			"id": 12,
+			"stationId": 3,
+			"currentSlot": 3
+		},
+		{
+			"id": 13,
+			"stationId": 3,
+			"currentSlot": 4
+		},
+		{
+			"id": 14,
+			"stationId": 3,
+			"currentSlot": 5
+		},
+		{
+			"id": 15,
+			"stationId": 4,
+			"currentSlot": 1
+		},
+		{
+			"id": 16,
+			"stationId": 4,
+			"currentSlot": 2
+		},
+		{
+			"id": 17,
+			"stationId": 4,
+			"currentSlot": 3
+		},
+		{
+			"id": 18,
+			"stationId": 4,
+			"currentSlot": 4
+		},
+		{
+			"id": 19,
+			"stationId": 4,
+			"currentSlot": 5
+		},
+		{
+			"id": 20,
+			"stationId": 4,
+			"currentSlot": 6
+		},
+		{
+			"id": 21,
+			"stationId": 4,
+			"currentSlot": 7
+		},
+		{
+			"id": 22,
+			"stationId": 4,
+			"currentSlot": 8
+		},
+		{
+			"id": 23,
+			"stationId": 5,
+			"currentSlot": 1
+		},
+		{
+			"id": 24,
+			"stationId": 5,
+			"currentSlot": 2
+		},
+		{
+			"id": 25,
+			"stationId": 5,
+			"currentSlot": 3
+		},
+		{
+			"id": 26,
+			"stationId": 5,
+			"currentSlot": 4
+		},
+		{
+			"id": 27,
+			"stationId": 5,
+			"currentSlot": 5
+		},
+		{
+			"id": 28,
+			"stationId": 5,
+			"currentSlot": 6
+		},
+		{
+			"id": 29,
+			"stationId": 5,
+			"currentSlot": 7
 		}
 	],
 	"Stations": [
-		{
-			"id": 0,
-			"adress": null,
-			"nearestMetroStation": null,
-			"numberOfSlots": 0,
-			"numberOfBikes": 0
-		}
+			{
+				"id": 1,
+				"adress": "ул. Крымский Вал, д.3",
+				"nearestMetroStation": "Октябрьская",
+				"numberOfSlots": 24,
+				"numberOfBikes": 6
+			},
+			{
+				"id": 2,
+				"adress": "Георгиевский пер., д.2",
+				"nearestMetroStation": "Охотный ряд",
+				"numberOfSlots": 12,
+				"numberOfBikes": 3
+			},
+			{
+				"id": 3,
+				"adress": "ул. Земляной Вал",
+				"nearestMetroStation": "Курская",
+				"numberOfSlots": 12,
+				"numberOfBikes": 5
+			},
+			{
+				"id": 4,
+				"adress": "ул. Косыгина, д.2, стр.19",
+				"nearestMetroStation": "Ленинский проспект",
+				"numberOfSlots": 8,
+				"numberOfBikes": 8
+			},
+			{
+				"id": 5,
+				"adress": "ул. Пречистенка, д.12/2, стр.1",
+				"nearestMetroStation": "Кропоткинская",
+				"numberOfSlots": 14,
+				"numberOfBikes": 7
+			},
+			{
+				"id": 6,
+				"adress": "Клементовский пер., д.23, стр.1",
+				"nearestMetroStation": "Третьяковская",
+				"numberOfSlots": 10,
+				"numberOfBikes": 0
+			}
 	]
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cycle.Info;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,20 @@ namespace CycleApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Context context = new Context();
         public MainWindow()
         {
             InitializeComponent();
+            //CopyDatatoDB(context);   //не успользовать без необходимости
+        }
 
+        static void CopyDatatoDB(Context context)  //метод для заполнения базы данных
+        {
+            DBRepository dbrepo = new DBRepository();
+
+            context.Bicycles.AddRange(dbrepo.Bicycles);
+            context.Stations.AddRange(dbrepo.Stations);
+            context.SaveChanges();
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)

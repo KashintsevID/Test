@@ -38,7 +38,7 @@ namespace Cycle.Info
 
         public DBRepository()
         {
-            _dataset = JsonConvert.DeserializeObject<DataSet>(File.ReadAllText(""));  //написать сюда путь к большому json файлу
+            _dataset = JsonConvert.DeserializeObject<DataSet>(File.ReadAllText("C:/Users/ПК/source/repos/Test2/Cycle.Info/Info/startingData.json"));  //написать сюда путь к исходному json файлу
         }
     }
 }
