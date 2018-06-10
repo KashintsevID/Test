@@ -11,7 +11,6 @@ namespace Cycle.Info
 {
     public class Repository
     {
-
         public List<Station> Stations { get; set; }
         public List<User> Users { get; set; }
         public List<Bicycle> Bicycles { get; set; }

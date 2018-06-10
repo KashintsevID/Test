@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cycle.Info.Classes;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -13,9 +15,11 @@ namespace Cycle.Info
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public int BikeTaken { get; set; }
-        public decimal Balance { get; set; }
         public int CardNumber { get; set; }
+        public decimal Balance { get; set; }
+        [JsonIgnore]
+        public Bicycle Bicycle { get; set; }
+        public int BikeTaken { get; set; }
         public DateTime BeginingOfRent { get; set; }
 
         //регистрация нового пользователя 

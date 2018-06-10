@@ -53,15 +53,26 @@
     <Compile Include="Classes\Bicycle.cs" />
     <Compile Include="Classes\Station.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="DBRepository.cs" />
+    <Compile Include="Migrations\201806101156318_init_one.cs" />
+    <Compile Include="Migrations\201806101156318_init_one.Designer.cs">
+      <DependentUpon>201806101156318_init_one.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Info\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Info\startingData.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806101156318_init_one.resx">
+      <DependentUpon>201806101156318_init_one.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
