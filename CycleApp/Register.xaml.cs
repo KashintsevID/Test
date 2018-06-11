@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,46 +21,68 @@ namespace CycleApp
     /// </summary>
     public partial class Register : Window
     {
-        public Register()
+        private Context cont;
+        public Register(Context context)
         {
             InitializeComponent();
-            WriteFullName1.Focus();
+            TextBoxFullName.Focus();
+            cont = context;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(WriteFullName1.Text) || string.IsNullOrWhiteSpace(WriteEmail1.Text) || string.IsNullOrWhiteSpace(WritePassword1.Password))
+            if (string.IsNullOrWhiteSpace(TextBoxFullName.Text))
             {
-                MessageBox.Show("Not all options are filled");
+                MessageBox.Show(" Please, enter your full name", "Warning");
+                TextBoxFullName.Focus();
+                return;
             }
-            else
+            if (string.IsNullOrWhiteSpace(TextBoxEmail.Text))
             {
-                User user = new User(WriteFullName1.Text, WriteEmail1.Text, WritePassword1.Password, 0);
-                // users.Add(user);
-                Repository repo = new Repository();
-                bool b = false;
-                foreach (var u in repo.Users)
-                {
-                    if (user.Email == u.Email)
-                    {
-                        b = true;
-                    }
-                }
-                if (b == false)
-                {
-                    Repository _repo = new Repository(user);
-                }
-                if (b == true)
-                {
-                    MessageBox.Show("The account is already exist");
-                }
-
-                MessageBox.Show("Registration was successful");
-                Close();
-                var main = new MainWindow();
-                main.Show();
-
+                MessageBox.Show(" Please, enter your email", "Warning");
+                TextBoxEmail.Focus();
+                return;
             }
+            if (string.IsNullOrWhiteSpace(PasswordBox.Password))
+            {
+                MessageBox.Show(" Please, enter your password", "Warning");
+                PasswordBox.Focus();
+                return;
+            }
+
+            foreach (var user in cont.Users)
+            {
+                if (user.Email == TextBoxEmail.Text)
+                {
+                    MessageBox.Show(" User with this email already exists\n Please try a different email", "Warning");
+                    TextBoxEmail.Focus();
+                    return;
+                }
+            }
+
+            string NewFullName = TextBoxFullName.Text.Trim();
+            string NewEmail = TextBoxEmail.Text.Trim();
+            string NewPassword = User.GetHash(PasswordBox.Password.Trim());
+
+            cont.Users.Add(new User()
+            {
+                Email = NewEmail,
+                Password = NewPassword,
+                FullName = NewFullName
+            }
+            );
+            cont.SaveChanges();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

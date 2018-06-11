@@ -21,28 +21,8 @@ namespace Cycle.Info
         public Bicycle Bicycle { get; set; }
         public int BikeTaken { get; set; }
         public DateTime BeginingOfRent { get; set; }
-
-        //регистрация нового пользователя 
-        public User(string FullName, string Email, string password, int RentBike, bool newPswTrue = false)
-        //newPswTrue = true если пароль введен в поле регистрации
-        //newPswTrue = false если пароль взят из json (hash уже есть)
-        {
-            this.FullName = FullName;
-            this.Email = Email;
-            this.BikeTaken = RentBike;
-            if (newPswTrue)
-            {
-                this.Password = GetHash(password);
-                newPswTrue = false;
-                Console.WriteLine("this.Password0=" + this.Password);
-            }
-            else
-            {
-                this.Password = password;
-            }
-
-        }
-        //хэширование
+        
+        //хэширование пароля
         public static string GetHash(string password)
         {
             var md5 = MD5.Create();
@@ -50,6 +30,5 @@ namespace Cycle.Info
                password));
             return Convert.ToBase64String(hash);
         }
-
     }
 }

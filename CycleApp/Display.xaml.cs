@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cycle.Info;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,12 @@ namespace CycleApp
     /// </summary>
     public partial class Display : Window
     {
-        public Display()
+        private Context cont;
+        private User currentUser;
+        public Display(Context context, User curUser)
         {
+            currentUser = curUser;
+            cont = context;
             InitializeComponent();
         }
     }
