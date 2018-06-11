@@ -28,5 +28,29 @@ namespace CycleApp
             cont = context;
             InitializeComponent();
         }
+
+        private void Rules_Click(object sender, RoutedEventArgs e)
+        {
+            var rulesWindow = new Rules_of_renting_bicycles();
+            Hide();
+            rulesWindow.ShowDialog();
+            Show();
+            
+        }
+
+        private void Price_Click(object sender, RoutedEventArgs e)
+        {
+            var priceWindow = new Price();
+            Hide();
+            priceWindow.ShowDialog();
+            Show();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new MainWindow();
+            Close();
+            mainWindow.Show();
+        }
     }
 }

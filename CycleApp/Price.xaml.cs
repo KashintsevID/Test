@@ -1,5 +1,4 @@
-﻿using Cycle.Info;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,15 +15,15 @@ using System.Windows.Shapes;
 namespace CycleApp
 {
     /// <summary>
-    /// Логика взаимодействия для Rules_of_renting_bicycles.xaml
+    /// Логика взаимодействия для Price.xaml
     /// </summary>
-    public partial class Rules_of_renting_bicycles : Window
+    public partial class Price : Window
     {
-        public Rules_of_renting_bicycles()
+        public Price()
         {
             InitializeComponent();
         }
-        private void Back_Click (object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
             Close();

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
-        Title="Rules_of_renting_bicycles" Height="1700" Width="450">
+        Title="Rules_of_renting_bicycles" Height="600" Width="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -13,25 +13,26 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" FontSize="22" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Times New Roman">Rules of renting bicycles</TextBlock>
-        <Image Height="40" HorizontalAlignment="Left" Margin="7" Source="Images/arrow-back-outline-128.png"></Image>
+        <Button Height="40"  HorizontalAlignment="Left" Margin="7" Click="Back_Click"> <Image Height="38"  Source="Images/arrow-back-outline-128.png"></Image></Button>
+       
         <ScrollViewer Height=" Auto" Grid.Row="1"  PanningMode="VerticalOnly" VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Disabled"  Margin="0,10,0,-10"  VerticalAlignment="Top" >
 
-            <Grid>
+            <Grid Height=" 1560">
                 <TextBlock Text="Как пользоваться прокатом велосипедов? " TextAlignment="Center" TextWrapping="Wrap" FontSize="50" FontFamily="Times New Roman" />
                 <TextBlock Text="1.Выберите велосипед на одной из наших стоянок, проверив его на предмет повреждений. " TextWrapping="Wrap" FontSize="22" FontFamily="Times New Roman" TextAlignment="Left" Margin="5  220 10 0"  />
                 <TextBlock Text="2.На стационарном автомате войдите в свой аккаунт и заплатите первичный взнос, равный 60р (получасовой прокат велочипеда) за понравившейся велосипед.Дождитесь, пока замок с велосипеда автоматически откроется и заберите его." TextWrapping="Wrap" Margin="5  350 10 0"  FontSize="22" FontFamily="Times New Roman" TextAlignment="Left"  ></TextBlock>
                 <TextBlock Text="3.Катайтесь столько, сколько хотите. Для того, чтобы вернуть велосипед, выберите одну из стоянок, которые указаны в приложении, подъезжайте в указанное место." TextWrapping="Wrap" FontSize="22" FontFamily="Times New Roman" TextAlignment="Left" Margin="5  580 10  0" ></TextBlock>
                 <TextBlock Text="4.Для того, чтобы завершить катание, поставьте велосипед в любой свободный слот на одной из выбранных вами стоянок велосипепод CYCLE, в стационарном автомате зайдите в свой аккаунт и выберите пункт для окончания проката велосипеда. С вашего счета автоматически спишется сумма за время проката. "  TextWrapping="Wrap" FontSize="22" FontFamily="Times New Roman" TextAlignment="Left" Margin="5 750 10  0" ></TextBlock>
-                <TextBlock Text=" Частые вопросы " HorizontalAlignment="Center" Margin="0 1050"  TextWrapping="Wrap" FontSize="40" FontFamily="Times New Roman"/>
+                <TextBlock Text=" Частые вопросы " HorizontalAlignment="Center" Margin="0 1050 0 0"  TextWrapping="Wrap" FontSize="40" FontFamily="Times New Roman"/>
                 <TextBlock Text="Как зарегистрироваться?" Margin="5 1130 10 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="26" FontFamily="Times New Roman" />
                 <TextBlock Text="Cкачайте приложение в Google play или  App Store. Перейдите по в окно регистрации по кнопке РЕГИСТРАЦИЯ"     Margin="5 1180 10 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman"/>
-                <TextBlock Text="Как изменить личные данные?" Margin="5 1300 10 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="26" FontFamily="Times New Roman"/>
-                <TextBlock Text="В главном окне выберите страницу личные данные. Нажмите на       " Margin="5 1350 10 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman"/>
-                <Image Source="Images/Account.png" Height=" 35" Margin=" 180 1370" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-                <Image Source="Images/redactor.png" Height=" 15" Margin=" 182 1390" VerticalAlignment="Top"  HorizontalAlignment="Right"  />
-                <TextBlock Text="Служба поддержки" HorizontalAlignment="Left" Margin=" 5 1480" TextWrapping="Wrap" FontSize="15" FontFamily="Times New Roman" />
-                <TextBlock Text="+7 (495) 786-76-35" Margin="5 1500" TextWrapping="Wrap" FontSize="25" FontFamily="Times New Roman"/>
-                <TextBlock Text="cyclecompany@gmail.com" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman" Margin="5 1530"/>
+                <TextBlock Text="Как изменить личные данные?" Margin="5 1300 0 0 " HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="26" FontFamily="Times New Roman"/>
+                <TextBlock Text="В главном окне выберите страницу личные данные. Нажмите на       " Margin="5 1350 0 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman"/>
+                <Image Source="Images/Account.png" Height=" 35" Margin=" 180 1370 180 0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <Image Source="Images/redactor.png" Height=" 15" Margin=" 182 1390 181 0" VerticalAlignment="Top"  HorizontalAlignment="Right"  />
+                <TextBlock Text="Служба поддержки" HorizontalAlignment="Left" Margin=" 5 1480 0 0" TextWrapping="Wrap" FontSize="15" FontFamily="Times New Roman" />
+                <TextBlock Text="+7 (495) 786-76-35" Margin="5 1500 0 0" TextWrapping="Wrap" FontSize="25" FontFamily="Times New Roman"/>
+                <TextBlock Text="cyclecompany@gmail.com" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman" Margin="5 1530 0 0"/>
               
             </Grid>
 

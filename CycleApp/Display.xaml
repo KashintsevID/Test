@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
         Title="Display" Height="600" Width="460">
-    <TabControl Name="Menu" >
-        <TabItem  Name="Account" Width=" 109" HorizontalAlignment="Left">
+    <TabControl TabStripPlacement="Top" Name="Menu" >
+        <TabItem Name="Account" Width=" 108" HorizontalAlignment="Left">
 
             <TabItem.Header  >
                 <Image Height=" 30" Source="Images/Account.png" ></Image>
@@ -49,7 +49,7 @@
                         Transfer money</Button>
                    
 
-                    <Button Name="Exit" Content="Tooltip" Margin="0 50 0 0" >
+                    <Button Name="Exit" Content="Tooltip" Margin="0 50 0 0" Click="Exit_Click" >
                         <Button.ToolTip>
                             Go out from your account
                         </Button.ToolTip>
@@ -74,7 +74,7 @@
 
 
 
-        <TabItem Name="Maps"  Width=" 109" HorizontalAlignment="Left"   >
+        <TabItem Name="Maps"  Width=" 108" HorizontalAlignment="Left"   >
             <TabItem.Header >
                 <Image Height=" 30" Source="Images/location.png" ></Image>
             </TabItem.Header>
@@ -99,7 +99,7 @@
 
 
 
-        <TabItem Name="History"  Width=" 110"  HorizontalAlignment="Right">
+        <TabItem Name="History"  Width=" 108"  HorizontalAlignment="Right">
             <TabItem.Header >
                 <Image Height=" 30" Source="Images/bike.png" ></Image>
             </TabItem.Header>
@@ -121,27 +121,27 @@
 
 
 
-        <TabItem Name="Help" Width=" 120"  HorizontalAlignment="Right">
+        <TabItem Name="Help" Width=" 108"  HorizontalAlignment="Right">
             <TabItem.Header >
                 <Image Height=" 30" Source="Images/help.png" ></Image>
             </TabItem.Header>
             <StackPanel Orientation="Vertical">
-                <Button Name="Rules" >
+                <Button Name="Rules" Click="Rules_Click" >
                     <Button.Template>
                         <ControlTemplate>
                             <Grid>
                                 <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
-                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Rules of renting bicycles</TextBlock>
+                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Правила пользования проката</TextBlock>
                             </Grid>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Name="Price">
+                <Button Name="Price" Click="Price_Click">
                     <Button.Template>
                         <ControlTemplate>
                             <Grid>
                                 <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
-                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Renting price</TextBlock>
+                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Стоимость проката</TextBlock>
                             </Grid>
                         </ControlTemplate>
                     </Button.Template>
@@ -151,7 +151,7 @@
                         <ControlTemplate>
                             <Grid>
                                 <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
-                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Contacts and help</TextBlock>
+                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Контакты и помощь</TextBlock>
                             </Grid>
                         </ControlTemplate>
                     </Button.Template>
@@ -161,7 +161,7 @@
                         <ControlTemplate>
                             <Grid>
                                 <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
-                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">About CYCLE</TextBlock>
+                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">О CYCLE</TextBlock>
                             </Grid>
                         </ControlTemplate>
                     </Button.Template>
