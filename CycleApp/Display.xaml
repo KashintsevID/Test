@@ -47,12 +47,7 @@
                 <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="0,0,0.115,0"  >
                     <Button Name="TransferMoney" HorizontalAlignment="Left" Height=" 70"  FontSize="20"  FontFamily=" Times New Roman" Width=" 450" >
                         Transfer money</Button>
-                    <Button Name="TakeBicycle"  Height=" 70"  FontSize="20"  FontFamily=" Times New Roman" Width=" 450" >
-                        Take bicycle
-                    </Button>
-                    <Button Name="LeaveBicycle"  Height=" 70"  FontSize="20"  FontFamily=" Times New Roman" Width=" 450" >
-                        Leave bicycle
-                    </Button>
+                   
 
                     <Button Name="Exit" Content="Tooltip" Margin="0 50 0 0" >
                         <Button.ToolTip>
@@ -118,10 +113,6 @@
 
                 </DataGrid>
             </Grid>
-
-
-
-
         </TabItem>
 
 
@@ -130,7 +121,7 @@
 
 
 
-        <TabItem Name="Help" Width=" 110"  HorizontalAlignment="Right">
+        <TabItem Name="Help" Width=" 120"  HorizontalAlignment="Right">
             <TabItem.Header >
                 <Image Height=" 30" Source="Images/help.png" ></Image>
             </TabItem.Header>
