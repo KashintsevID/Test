@@ -53,6 +53,7 @@
                     </LinearGradientBrush>
                 </Button.Background> Регистрация
             </Button>
+          
         </StackPanel>
     </Grid>
 </Window>
