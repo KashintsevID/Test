@@ -24,7 +24,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBox TextWrapping="Wrap" Text="Имя пользоватеся" Name="UserName" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="106.289,0,64.212,0"></TextBox>
-                <Label Margin="10" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left">Balance:</Label>
+                <Label Margin="10" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
                 <TextBox Name="Balance" TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Height=" 14" Width="100" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
 
                 <Button Name="RedactorAccount" Content="Tooltip" Margin="40,40,39.711,40" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
@@ -68,28 +68,28 @@
                 <Image Height="30" Source="Images/location.png"></Image>
             </TabItem.Header>
             <Grid>
-                
-                <TextBlock>AllStations</TextBlock>
-                <DataGrid Name="ListStations"  AutoGenerateColumns="False">
+
+                <TextBlock FontWeight="Medium" HorizontalAlignment="Center" Margin="0 10 0 0">Станции</TextBlock>
+                <DataGrid Name="ListStations" AutoGenerateColumns="False" Margin="10 35 10 20">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width=" 0.7*" Binding="{Binding Adress}">
+                        <DataGridTextColumn Width="3*" Binding="{Binding Adress}">
                             <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap" Margin="120 0 100 0">
-                                    Adress
+                                <TextBlock HorizontalAlignment="Center">
+                                    Адрес
                                 </TextBlock>
                             </DataGridTextColumn.Header>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Width=" 0.15*" Binding="{Binding NumberOfSlots}">
+                        <DataGridTextColumn Width="1*" Binding="{Binding NumberOfSlots}">
                             <DataGridTextColumn.Header >
                                 <TextBlock TextWrapping="Wrap">
-                                    Number of available slots
+                                    Свободных стоек
                                 </TextBlock>
                             </DataGridTextColumn.Header>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Width=" 0.15*" Binding="{Binding NumberOfBikes}">
+                        <DataGridTextColumn Width="1*" Binding="{Binding NumberOfBikes}">
                             <DataGridTextColumn.Header >
                                 <TextBlock TextWrapping="Wrap">
-                                    Number of available bicycles
+                                    Свободных велосипедов
                                 </TextBlock>
                             </DataGridTextColumn.Header>
                         </DataGridTextColumn>
