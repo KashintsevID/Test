@@ -66,9 +66,13 @@ namespace CycleApp
 
             cont.Users.Add(new User()
             {
+                FullName = NewFullName,
                 Email = NewEmail,
                 Password = NewPassword,
-                FullName = NewFullName
+                CardNumber = 0,
+                Balance = 0,
+                BikeTaken = 0,
+                BeginingOfRent = DateTime.Now
             }
             );
             cont.SaveChanges();

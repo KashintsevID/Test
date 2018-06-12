@@ -14,30 +14,30 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Grid.RowDefinitions >
-            <RowDefinition Height =" 0.75*"/>
-            <RowDefinition Height=" Auto"/>
-            <RowDefinition Height=" Auto"/>
-            <RowDefinition Height="200" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions >
-            <ColumnDefinition />
-            <ColumnDefinition Width=" Auto"/>
-            <ColumnDefinition />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="3" Grid.Column=" 0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" >
-            <Image Margin=" 20" Height="120" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
+            <Image Margin="20" Height="120" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             </Image>
         </StackPanel>
-        <TextBlock Height="100" TextAlignment="Center" FontSize="70"  Foreground="White"  Grid.Row=" 0" Grid.Column=" 0" Grid.ColumnSpan=" 3" Margin="10 10 10 10 " >CYCLE</TextBlock>
-        <TextBlock   Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom" FontFamily=" Times New Roman" FontSize=" 30"  Grid.Row=" 0" Grid.Column=" 0" Grid.ColumnSpan=" 3"> Enter your credentials</TextBlock>
-        <TextBlock Foreground="White" FontFamily=" Times New Roman" Grid.Row=" 1" FontSize="22" Margin="10 5">Email</TextBlock>
-        <TextBlock Foreground="White" FontFamily=" Times New Roman" Grid.Row=" 2" FontSize="22" Margin="10 5" >Password</TextBlock>
-        <TextBox Foreground="Black" x:Name="TextBoxEmail" Height=" 50" Grid.Column=" 1" Grid.ColumnSpan=" 2" FontFamily=" Times New Roman" Grid.Row=" 1" FontSize="20" Margin="20 5" Background="White"  />
-        <PasswordBox PasswordChar="." Foreground="Black"  x:Name="PasswordBox" Height="50" Grid.Column=" 1" Grid.ColumnSpan=" 2" FontFamily=" Times New Roman" Grid.Row=" 2" FontSize="20" Margin="20 5" ></PasswordBox>
-        <StackPanel Grid.Column="1" Grid.Row=" 4" >
+        <TextBlock Height="100" TextAlignment="Center" FontSize="70" Foreground="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="10 10 10 10">CYCLE</TextBlock>
+        <TextBlock Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="15">Enter your credentials</TextBlock>
+        <TextBlock Foreground="White" FontFamily="Times New Roman" Grid.Row="1" FontSize="22" Margin="15 5">Email</TextBlock>
+        <TextBlock Foreground="White" FontFamily="Times New Roman" Grid.Row="2" FontSize="22" Margin="15 5">Password</TextBlock>
+        <TextBox Foreground="Black" x:Name="TextBoxEmail" Height="50" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" Grid.Row="1" FontSize="20" Margin="20 5" Background="White"/>
+        <PasswordBox Foreground="Black" x:Name="PasswordBox" Height="50" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" Grid.Row="2" FontSize="20" Margin="20 5"></PasswordBox>
 
-            <Button x:Name="ButtonLogin" Height=" 40 " Width="150 " Margin=" 10 20 10 10 " FontSize="24" FontFamily=" Times New Roman" Click="ButtonLogin_Click" >
+        <StackPanel Grid.Column="1" Grid.Row="4">
+            <Button x:Name="ButtonLogin" Height="40" Width="150" Margin="10 20 10 10" FontSize="24" FontFamily="Times New Roman" Click="ButtonLogin_Click" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFE1E8F5" Offset="0"/>
@@ -45,8 +45,7 @@
                     </LinearGradientBrush>
                 </Button.Background> Login
             </Button>
-            <Button Height=" 60" Width=" 60" Click="Button_Click"> Ok</Button>
-            <Button Height=" 40" Width=" 150 " Margin=" 5" FontSize="24" FontFamily=" Times New Roman" Click="ButtonRegister_Click">
+            <Button Height="40" Width="150" Margin="5" FontSize="24" FontFamily="Times New Roman" Click="ButtonRegister_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFE1E8F5" Offset="0"/>
