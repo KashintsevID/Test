@@ -29,11 +29,11 @@
         <Button x:Name="ButtonBack" Height="40" Width="40" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="ButtonBack_Click">
             <Image Source="Images/arrow-back-outline-128.png"></Image>
         </Button>
-        
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Center" FontFamily="Times New Roman" FontSize="30" VerticalAlignment="Center" Foreground="White" Margin="10 80 10 10">Fill in the following details</TextBlock>
-        <TextBox Margin="20 5" x:Name="TextBoxFullName" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" FontSize="24" Height="50" FontFamily="Times New Roman"></TextBox>
-        <TextBox Margin="20 5" x:Name="TextBoxEmail" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24" Grid.Row="2" Height="50" FontFamily="Times New Roman"></TextBox>
-        <PasswordBox PasswordChar="." Margin="20 5" x:Name="PasswordBox" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24" Grid.Row="3" Height="50" FontFamily="Times New Roman"></PasswordBox>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Center" FontFamily="Times New Roman" FontSize="30" VerticalAlignment="Center" Foreground="White" Margin="10 30 10 10">Введите ваши данные</TextBlock>
+        <TextBox Margin="20 5" x:Name="TextBoxFullName" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" FontSize="24" Height="40" FontFamily="Times New Roman"></TextBox>
+        <TextBox Margin="20 5" x:Name="TextBoxEmail" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24" Grid.Row="2" Height="40" FontFamily="Times New Roman"></TextBox>
+        <PasswordBox Margin="20 5" x:Name="PasswordBox" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24" Grid.Row="3" Height="40" FontFamily="Times New Roman"></PasswordBox>
         <TextBlock Foreground="White" Margin="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24">Полное имя</TextBlock>
         <TextBlock Foreground="White" Margin="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24">Email</TextBlock>
         <TextBlock Foreground="White" Margin="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24">Пароль</TextBlock>
