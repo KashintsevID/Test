@@ -32,7 +32,7 @@
         <TextBlock Height="100" TextAlignment="Center" FontSize="70" Foreground="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="10 10 10 10">CYCLE</TextBlock>
         <TextBlock Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="15">Enter your credentials</TextBlock>
         <TextBlock Foreground="White" FontFamily="Times New Roman" Grid.Row="1" FontSize="22" Margin="15 5">Email</TextBlock>
-        <TextBlock Foreground="White" FontFamily="Times New Roman" Grid.Row="2" FontSize="22" Margin="15 5">Password</TextBlock>
+        <TextBlock Foreground="White" FontFamily="Times New Roman" Grid.Row="2" FontSize="22" Margin="15 5">Пароль</TextBlock>
         <TextBox Foreground="Black" x:Name="TextBoxEmail" Height="50" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" Grid.Row="1" FontSize="20" Margin="20 5" Background="White"/>
         <PasswordBox Foreground="Black" x:Name="PasswordBox" Height="50" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" Grid.Row="2" FontSize="20" Margin="20 5"></PasswordBox>
 
@@ -43,7 +43,7 @@
                         <GradientStop Color="#FFE1E8F5" Offset="0"/>
                         <GradientStop Color="#FF8AA3D8" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Login
+                </Button.Background> Войти
             </Button>
             <Button Height="40" Width="150" Margin="5" FontSize="24" FontFamily="Times New Roman" Click="ButtonRegister_Click">
                 <Button.Background>
@@ -51,7 +51,7 @@
                         <GradientStop Color="#FFE1E8F5" Offset="0"/>
                         <GradientStop Color="#FF8AA3D8" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Register
+                </Button.Background> Регистрация
             </Button>
         </StackPanel>
     </Grid>

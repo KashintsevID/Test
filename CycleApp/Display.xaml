@@ -23,13 +23,13 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox TextWrapping="Wrap" Text="User Name" Name="UserName" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="106.289,0,64.212,0"></TextBox>
+                <TextBox TextWrapping="Wrap" Text="Имя пользоватеся" Name="UserName" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="106.289,0,64.212,0"></TextBox>
                 <Label Margin="10" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left">Balance:</Label>
                 <TextBox Name="Balance" TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Height=" 14" Width="100" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
 
                 <Button Name="RedactorAccount" Content="Tooltip" Margin="40,40,39.711,40" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
                     <Button.ToolTip>
-                        Make changes with your data
+                        Изменить личные данные
                     </Button.ToolTip>
                     <Button.Template>
                         <ControlTemplate>
@@ -43,18 +43,18 @@
                 </Button>
                 <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="0,0,0.115,0">
                     <Button Name="TransferMoney" HorizontalAlignment="Left" Height=" 70" FontSize="20" FontFamily="Times New Roman" Width="450">
-                        Transfer money
+                        Пополнить баланс
                     </Button>
                    
                     <Button Name="Exit" Content="Tooltip" Margin="0 50 0 0" Click="Exit_Click">
                         <Button.ToolTip>
-                            Go out from your account
+                           Выйти из аккаунта
                         </Button.ToolTip>
                         <Button.Template>
                             <ControlTemplate>
                                 <Grid>
                                     <Image Source="Images/exit.png" HorizontalAlignment="Left" Height="30"></Image>
-                                    <TextBlock FontSize="22" Width=" 70" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Exit</TextBlock>
+                                    <TextBlock FontSize="22" Width=" 70" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Выйти</TextBlock>
                                 </Grid>
                             </ControlTemplate>
                         </Button.Template>

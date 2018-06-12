@@ -34,13 +34,13 @@
         <TextBox Margin="20 5" x:Name="TextBoxFullName" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" FontSize="24" Height="50" FontFamily="Times New Roman"></TextBox>
         <TextBox Margin="20 5" x:Name="TextBoxEmail" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24" Grid.Row="2" Height="50" FontFamily="Times New Roman"></TextBox>
         <PasswordBox PasswordChar="." Margin="20 5" x:Name="PasswordBox" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24" Grid.Row="3" Height="50" FontFamily="Times New Roman"></PasswordBox>
-        <TextBlock Foreground="White" Margin="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24">Full name</TextBlock>
+        <TextBlock Foreground="White" Margin="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24">Полное имя</TextBlock>
         <TextBlock Foreground="White" Margin="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24">Email</TextBlock>
-        <TextBlock Foreground="White" Margin="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24">Password</TextBlock>
+        <TextBlock Foreground="White" Margin="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24">Пароль</TextBlock>
 
         <StackPanel Grid.Row="4" Grid.Column="2">
             <Button x:Name="ButtonRegister" Margin="10 20 10 10 " Width="150" Height="40" FontSize="24" FontFamily="Times New Roman" Click="ButtonRegister_Click">
-                Register
+                Зарегистрироваться
             </Button>
             <Button Margin="5" Width="150" Height="40" FontSize="24" FontFamily="Times New Roman">
                 Cancel
