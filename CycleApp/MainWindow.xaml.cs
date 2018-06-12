@@ -26,6 +26,7 @@ namespace CycleApp
         {
             InitializeComponent();
             //CopyDatatoDB(context);   //не использовать без необходимости
+            TextBoxEmail.Focus();
         }
 
         static void CopyDatatoDB(Context context)  //метод для заполнения базы данных
@@ -48,14 +49,14 @@ namespace CycleApp
         {
             if (string.IsNullOrWhiteSpace(TextBoxEmail.Text))
             {
-                MessageBox.Show(" Please, enter your email", "Warning");
+                MessageBox.Show(" Введите вашу почту", "Внимание");
                 TextBoxEmail.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(PasswordBox.Password))
             {
-                MessageBox.Show(" Please, enter your password", "Warning");
+                MessageBox.Show(" Введите ваш пароль", "Внимание");
                 PasswordBox.Focus();
                 return;
             }
@@ -72,7 +73,7 @@ namespace CycleApp
                 }
             }
 
-            MessageBox.Show(" Email or password were written incorrectly\n Please try again or register", "No such user");
+            MessageBox.Show(" Почта или пароль были введены некорректно\n Повторите ввод или зарегистрируйтесь", "Пользователь не найден");
             return;
         }
     }

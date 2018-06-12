@@ -33,8 +33,8 @@
         <TextBlock Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="15">Введите свои данные</TextBlock>
         <TextBlock Foreground="White" FontFamily="Times New Roman" Grid.Row="1" FontSize="22" Margin="15 5">Email</TextBlock>
         <TextBlock Foreground="White" FontFamily="Times New Roman" Grid.Row="2" FontSize="22" Margin="15 5">Пароль</TextBlock>
-        <TextBox Foreground="Black" x:Name="TextBoxEmail" Height="50" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" Grid.Row="1" FontSize="20" Margin="20 5" Background="White"/>
-        <PasswordBox Foreground="Black" x:Name="PasswordBox" Height="50" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" Grid.Row="2" FontSize="20" Margin="20 5"></PasswordBox>
+        <TextBox Foreground="Black" x:Name="TextBoxEmail" Height="35" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" Grid.Row="1" FontSize="20" Margin="20 5" Background="White"/>
+        <PasswordBox Foreground="Black" x:Name="PasswordBox" Height="35" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Times New Roman" Grid.Row="2" FontSize="20" Margin="20 5"></PasswordBox>
 
         <StackPanel Grid.Column="1" Grid.Row="4">
             <Button x:Name="ButtonLogin" Height="40" Width="150" Margin="10 20 10 10" FontSize="24" FontFamily="Times New Roman" Click="ButtonLogin_Click" >

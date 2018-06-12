@@ -33,19 +33,19 @@ namespace CycleApp
         {
             if (string.IsNullOrWhiteSpace(TextBoxFullName.Text))
             {
-                MessageBox.Show(" Please, enter your full name", "Warning");
+                MessageBox.Show(" Введите своё имя и фамилию", "Внимание");
                 TextBoxFullName.Focus();
                 return;
             }
             if (string.IsNullOrWhiteSpace(TextBoxEmail.Text))
             {
-                MessageBox.Show(" Please, enter your email", "Warning");
+                MessageBox.Show(" Введите вашу почту", "Внимание");
                 TextBoxEmail.Focus();
                 return;
             }
             if (string.IsNullOrWhiteSpace(PasswordBox.Password))
             {
-                MessageBox.Show(" Please, enter your password", "Warning");
+                MessageBox.Show(" Введите ваш пароль", "Внимание");
                 PasswordBox.Focus();
                 return;
             }
@@ -54,7 +54,7 @@ namespace CycleApp
             {
                 if (user.Email == TextBoxEmail.Text)
                 {
-                    MessageBox.Show(" User with this email already exists\n Please try a different email", "Warning");
+                    MessageBox.Show(" На данную почту уже зарегистрирован пользователь\n Попробуйте другой адрес", "Внимание");
                     TextBoxEmail.Focus();
                     return;
                 }
@@ -64,20 +64,19 @@ namespace CycleApp
             string NewEmail = TextBoxEmail.Text.Trim();
             string NewPassword = User.GetHash(PasswordBox.Password.Trim());
 
-            cont.Users.Add(new User()
-            {
+            User newUser = new User()
+                {
                 FullName = NewFullName,
                 Email = NewEmail,
                 Password = NewPassword,
                 CardNumber = 0,
                 CardPassword = 0,
-                Balance = 0
-            }
-            );
+                Balance = 0 };
+            cont.Users.Add(newUser);
             cont.SaveChanges();
 
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            Display display = new Display(cont, newUser);
+            display.Show();
             this.Close();
         }
 

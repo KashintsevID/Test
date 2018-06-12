@@ -1,12 +1,13 @@
 ﻿using Cycle.Info;
+using Cycle.Info.Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -27,9 +28,16 @@ namespace CycleApp
             currentUser = curUser;
             cont = context;
             InitializeComponent();
-            this.ListStations.ItemsSource = cont.Stations.ToList();
+            this.ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
             UserName.Text = currentUser.FullName;
             Balance.Text = currentUser.Balance.ToString();
+            List<string> metroStations = new List<string>();
+            foreach (Station station in cont.Stations)
+            {
+                if (!metroStations.Contains(station.NearestMetroStation))
+                    metroStations.Add(station.NearestMetroStation);
+            }
+            ComboBoxMetro.ItemsSource = metroStations.OrderBy(m => m);
         }
 
         private void Rules_Click(object sender, RoutedEventArgs e)
@@ -64,6 +72,24 @@ namespace CycleApp
             Show();
         }
 
-        
+        private void TransferMoney_Click(object sender, RoutedEventArgs e)
+        {
+            IsEnabled = false;
+            var transfer = new TransferMoney(currentUser);
+            if (transfer.ShowDialog() == true || transfer.IsActive == false)
+            {
+                IsEnabled = true;
+            }
+        }
+
+        private void ComboBoxMetro_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //if (ComboBoxMetro.SelectedItem != null)
+            //{
+            //    string metro = ComboBoxMetro.ItemsSource.ToString();
+            //    List<Station> bikeStations = cont.Stations.Where(s => s.NearestMetroStation.Equals(metro)).ToList();
+            //    ListStations.ItemsSource = bikeStations;
+            //}
+        }
     }
 }
