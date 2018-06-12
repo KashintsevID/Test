@@ -27,6 +27,7 @@ namespace CycleApp
             currentUser = curUser;
             cont = context;
             InitializeComponent();
+            this.ListStations.ItemsSource = cont.Stations;
         }
 
         private void Rules_Click(object sender, RoutedEventArgs e)
@@ -60,5 +61,7 @@ namespace CycleApp
             aboutCycle.ShowDialog();
             Show();
         }
+
+        
     }
 }

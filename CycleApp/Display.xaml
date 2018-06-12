@@ -68,13 +68,33 @@
                 <Image Height="30" Source="Images/location.png"></Image>
             </TabItem.Header>
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+                
                 <TextBlock>AllStations</TextBlock>
-                <ComboBox Name="CBAllStations" IsTextSearchEnabled="True" FontSize="22" FontFamily="Times New Roman">
-                </ComboBox>
+                <DataGrid Name="ListStations"  AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width=" 0.7*" Binding="{Binding }">
+                            <DataGridTextColumn.Header >
+                                <TextBlock TextWrapping="Wrap" Margin="120 0 100 0">
+                                    Adress
+                                </TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Width=" 0.15*">
+                            <DataGridTextColumn.Header >
+                                <TextBlock TextWrapping="Wrap">
+                                    Number of available slots
+                                </TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Width=" 0.15*">
+                            <DataGridTextColumn.Header >
+                                <TextBlock TextWrapping="Wrap">
+                                    Number of available bicycles
+                                </TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
         </TabItem>
 
