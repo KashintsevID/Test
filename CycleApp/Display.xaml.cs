@@ -27,7 +27,7 @@ namespace CycleApp
             currentUser = curUser;
             cont = context;
             InitializeComponent();
-            this.ListStations.ItemsSource = cont.Stations.ToList();
+            this.ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
         }
 
         private void Rules_Click(object sender, RoutedEventArgs e)

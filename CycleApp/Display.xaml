@@ -72,23 +72,30 @@
                 <TextBlock FontWeight="Medium" HorizontalAlignment="Center" Margin="0 10 0 0">Станции</TextBlock>
                 <DataGrid Name="ListStations" AutoGenerateColumns="False" Margin="10 35 10 20">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width="3*" Binding="{Binding Adress}">
+                        <DataGridTextColumn Width="2.5*" Binding="{Binding Adress}">
                             <DataGridTextColumn.Header >
                                 <TextBlock HorizontalAlignment="Center">
                                     Адрес
                                 </TextBlock>
                             </DataGridTextColumn.Header>
                         </DataGridTextColumn>
+                        <DataGridTextColumn Width="1.5*" Binding="{Binding NearestMetroStation}">
+                            <DataGridTextColumn.Header >
+                                <TextBlock HorizontalAlignment="Center">
+                                    Ст. метро
+                                </TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
                         <DataGridTextColumn Width="1*" Binding="{Binding NumberOfSlots}">
                             <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap">
+                                <TextBlock TextWrapping="Wrap" FontSize="10">
                                     Свободных стоек
                                 </TextBlock>
                             </DataGridTextColumn.Header>
                         </DataGridTextColumn>
                         <DataGridTextColumn Width="1*" Binding="{Binding NumberOfBikes}">
                             <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap">
+                                <TextBlock TextWrapping="Wrap" FontSize="9.5">
                                     Свободных велосипедов
                                 </TextBlock>
                             </DataGridTextColumn.Header>
@@ -107,7 +114,7 @@
                     <RowDefinition Height="0.15*"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock FontSize="22" Grid.Row="0" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="0 10">History of your trips</TextBlock>
+                <TextBlock FontSize="22" Grid.Row="0" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="0 15">История ваших поездок</TextBlock>
                 <DataGrid Grid.Row="1">
                 </DataGrid>
             </Grid>
