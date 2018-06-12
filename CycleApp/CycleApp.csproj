@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="About CYCLE.xaml.cs">
+      <DependentUpon>About CYCLE.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Display.xaml.cs">
       <DependentUpon>Display.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,10 @@
     <Compile Include="Rules of renting bicycles.xaml.cs">
       <DependentUpon>Rules of renting bicycles.xaml</DependentUpon>
     </Compile>
+    <Page Include="About CYCLE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Display.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,6 +154,9 @@
       <Project>{B05FE3A2-C76B-4B0B-B6D8-4F4EF4813207}</Project>
       <Name>Cycle.Info</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\girl.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

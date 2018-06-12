@@ -146,17 +146,8 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Name="ContactsAndHelp">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Grid>
-                                <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40"  Height=" 30"></Image>
-                                <TextBlock FontSize="22"  Margin=" 50" HorizontalAlignment="Left" FontFamily=" Times New Roman">Контакты и помощь</TextBlock>
-                            </Grid>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Name="AboutOurCompany">
+               
+                <Button Name="AboutOurCompany" Click="AboutOurCompany_Click">
                     <Button.Template>
                         <ControlTemplate>
                             <Grid>

@@ -52,5 +52,13 @@ namespace CycleApp
             Close();
             mainWindow.Show();
         }
+
+        private void AboutOurCompany_Click(object sender, RoutedEventArgs e)
+        {
+            var aboutCycle = new About_CYCLE();
+            Hide();
+            aboutCycle.ShowDialog();
+            Show();
+        }
     }
 }

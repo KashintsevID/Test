@@ -1,0 +1,37 @@
+﻿<Window x:Class="CycleApp.About_CYCLE"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CycleApp"
+        mc:Ignorable="d"
+        Title="About_CYCLE" Height="600" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" FontSize="22" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Times New Roman">О СYCLE</TextBlock>
+        <Button Height="40"  HorizontalAlignment="Left" Margin="7" Click="Back_Click">
+            <Image Height="38"  Source="Images/arrow-back-outline-128.png"></Image>
+        </Button>
+
+        <ScrollViewer    Grid.Row="1"  PanningMode="VerticalOnly" VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Disabled"  Margin="0,10,0,-10"  VerticalAlignment="Top" >
+
+            <Grid Height="1100" >
+                <TextBlock VerticalAlignment="Top" Text=" Проект CYCLE был создан в рамках программы Зеленый Город, чтобы показать альтернативное средство передвижение общественному транспорту и автомобилю." TextWrapping="Wrap" FontSize="25" FontWeight="Heavy" FontFamily="Times New Roman" Margin=" 10 10 10 0"></TextBlock>
+                <Image VerticalAlignment="Top" Source="Images/girl.jpg" Margin="0 200 0 0" Height="300"  ></Image>
+                <TextBlock Text="CYCLE - это удобный, экологический и автоматизированный городской транспорт." VerticalAlignment="Top" TextWrapping="Wrap" FontSize="17"  FontFamily="Times New Roman" Margin=" 10 500 10 0"></TextBlock>
+                <TextBlock Text="CYCLE -  это автоматизированная городская служба велопроката. Мы помогаем москвичам и гостям столицы исследовать город, выезать на пикники и ездить по делам.Наши постоянные клиенты ездят на велосипедах от дома до метро и от метро до работы. " VerticalAlignment="Top" TextWrapping="Wrap" FontSize="17"  FontFamily="Times New Roman" Margin=" 10 570 10 0"></TextBlock>
+                <TextBlock Text=" CYCLE - это альтернатива личному автомобилю и общественному транспорту. Наши велосипеды предназначены для коротких поездок по городу: пользователи берут велосипед на удобной станции и возвращают его на любую другую станцию." VerticalAlignment="Top" TextWrapping="Wrap" FontSize="17"  FontFamily="Times New Roman" Margin=" 10 695 10 0"></TextBlock>
+                <TextBlock Text="Нашим пользователям не нужно покупать и хранить собственные велосипеды, стоять в пробках и платить за парковку. Не нужно думать о техническом обслуживании. Взять и сдать велосипед можно за минуту, без очередей и залогов" VerticalAlignment="Top" TextWrapping="Wrap" FontSize="17"  FontFamily="Times New Roman" Margin=" 10 830 10 0"></TextBlock>
+                <TextBlock Text="Служба поддержки" HorizontalAlignment="Left" Margin=" 5 1000 0 0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontFamily="Times New Roman" />
+                <TextBlock Text="+7 (495) 786-76-35" Margin="5 1030 0 0 " TextWrapping="Wrap" FontSize="25" VerticalAlignment="Top" FontFamily="Times New Roman"/>
+                <TextBlock Text="cyclecompany@gmail.com" TextWrapping="Wrap" FontSize="21" VerticalAlignment="Top" FontFamily="Times New Roman" Margin="5 1060 0 0"/>
+            </Grid>
+
+
+        </ScrollViewer>
+    </Grid>
+</Window>
