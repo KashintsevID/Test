@@ -13,6 +13,7 @@ namespace Cycle.Info
         public DbSet<Bicycle> Bicycles { get; set; }
         public DbSet<Station> Stations { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Ride> Rides { get; set; }
 
         public Context() : base("CycleDatabase")
         {

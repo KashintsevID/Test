@@ -25,7 +25,7 @@ namespace CycleApp
         public MainWindow()
         {
             InitializeComponent();
-          //  CopyDatatoDB(context);   //не использовать без необходимости
+            //CopyDatatoDB(context);   //не использовать без необходимости
         }
 
         static void CopyDatatoDB(Context context)  //метод для заполнения базы данных
