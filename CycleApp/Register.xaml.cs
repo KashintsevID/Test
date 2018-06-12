@@ -70,9 +70,8 @@ namespace CycleApp
                 Email = NewEmail,
                 Password = NewPassword,
                 CardNumber = 0,
-                Balance = 0,
-                BikeTaken = 0,
-                BeginingOfRent = DateTime.Now
+                CardPassword = 0,
+                Balance = 0
             }
             );
             cont.SaveChanges();

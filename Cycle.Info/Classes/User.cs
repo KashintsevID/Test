@@ -16,12 +16,8 @@ namespace Cycle.Info
         public string Email { get; set; }
         public string Password { get; set; }
         public int CardNumber { get; set; }
+        public int CardPassword { get; set; }
         public decimal Balance { get; set; }
-        [JsonIgnore]
-        public Bicycle Bicycle { get; set; }
-        public int BikeTaken { get; set; }
-        public DateTime BeginingOfRent { get; set; }
-        public string  PasswordOfCard { get; set; }
 
         //хэширование пароля
         public static string GetHash(string password)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cycle.Info;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,20 @@ namespace CycleApp
     /// </summary>
     public partial class TransferMoney : Window
     {
-        public TransferMoney()
+        private Context cont;
+        private User currentUser;
+        public TransferMoney(Context context, User curUser)
         {
+            cont = context;
+            currentUser = curUser;
             InitializeComponent();
+            NumberOfCard.Text = currentUser.CardNumber.ToString();
         }
+        private void Click_Back(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
+        }
+
     }
 }

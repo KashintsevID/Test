@@ -7,13 +7,13 @@ namespace Cycle.Info.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class init_one : IMigrationMetadata
+    public sealed partial class init_five : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init_one));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init_five));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806101156318_init_one"; }
+            get { return "201806121641105_init_five"; }
         }
         
         string IMigrationMetadata.Source

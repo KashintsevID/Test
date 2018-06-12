@@ -3,7 +3,7 @@ namespace Cycle.Info.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init_one : DbMigration
+    public partial class init_four : DbMigration
     {
         public override void Up()
         {
@@ -40,22 +40,16 @@ namespace Cycle.Info.Migrations
                         Email = c.String(),
                         Password = c.String(),
                         CardNumber = c.Int(nullable: false),
+                        CardPassword = c.Int(nullable: false),
                         Balance = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        BikeTaken = c.Int(nullable: false),
-                        BeginingOfRent = c.DateTime(nullable: false),
-                        Bicycle_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Bicycles", t => t.Bicycle_Id)
-                .Index(t => t.Bicycle_Id);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Users", "Bicycle_Id", "dbo.Bicycles");
             DropForeignKey("dbo.Bicycles", "StationId", "dbo.Stations");
-            DropIndex("dbo.Users", new[] { "Bicycle_Id" });
             DropIndex("dbo.Bicycles", new[] { "StationId" });
             DropTable("dbo.Users");
             DropTable("dbo.Stations");
