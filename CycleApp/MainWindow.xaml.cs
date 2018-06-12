@@ -25,7 +25,7 @@ namespace CycleApp
         public MainWindow()
         {
             InitializeComponent();
-            CopyDatatoDB(context);   //не использовать без необходимости
+            //CopyDatatoDB(context);   //не использовать без необходимости
         }
 
         static void CopyDatatoDB(Context context)  //метод для заполнения базы данных
@@ -74,13 +74,6 @@ namespace CycleApp
 
             MessageBox.Show(" Email or password were written incorrectly\n Please try again or register", "No such user");
             return;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            User us = new User();
-            var dispW = new Display(context,us);
-
         }
     }
 }

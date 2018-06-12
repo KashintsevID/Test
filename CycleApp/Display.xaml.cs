@@ -28,16 +28,8 @@ namespace CycleApp
             cont = context;
             InitializeComponent();
             this.ListStations.ItemsSource = cont.Stations.ToList();
-
-           
-
             UserName.Text = currentUser.FullName;
             Balance.Text = currentUser.Balance.ToString();
-            foreach (var s in cont.Stations )
-            {
-                s.NumderOfAVAILABLESlots = s.NumberOfSlots - s.NumberOfBikes;
-            }
-          
         }
 
         private void Rules_Click(object sender, RoutedEventArgs e)
@@ -72,10 +64,6 @@ namespace CycleApp
             Show();
         }
 
-        private void TransferMoney_Click(object sender, RoutedEventArgs e)
-        {
-            var transferMoney = new TransferMoney(cont, currentUser);
-            transferMoney.ShowDialog();
-        }
+        
     }
 }
