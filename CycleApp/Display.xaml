@@ -72,21 +72,21 @@
                 <TextBlock>AllStations</TextBlock>
                 <DataGrid Name="ListStations"  AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width=" 0.7*" Binding="{Binding }">
+                        <DataGridTextColumn Width=" 0.7*" Binding="{Binding Adress}">
                             <DataGridTextColumn.Header >
                                 <TextBlock TextWrapping="Wrap" Margin="120 0 100 0">
                                     Adress
                                 </TextBlock>
                             </DataGridTextColumn.Header>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Width=" 0.15*">
+                        <DataGridTextColumn Width=" 0.15*" Binding="{Binding NumberOfSlots}">
                             <DataGridTextColumn.Header >
                                 <TextBlock TextWrapping="Wrap">
                                     Number of available slots
                                 </TextBlock>
                             </DataGridTextColumn.Header>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Width=" 0.15*">
+                        <DataGridTextColumn Width=" 0.15*" Binding="{Binding NumberOfBikes}">
                             <DataGridTextColumn.Header >
                                 <TextBlock TextWrapping="Wrap">
                                     Number of available bicycles
