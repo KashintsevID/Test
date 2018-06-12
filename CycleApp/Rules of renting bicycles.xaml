@@ -27,10 +27,8 @@
                 <TextBlock Text="Частые вопросы" HorizontalAlignment="Center" Margin="0 1050 0 0" TextWrapping="Wrap" FontSize="40" FontFamily="Times New Roman"/>
                 <TextBlock Text="Как зарегистрироваться?" Margin="5 1130 10 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="26" FontFamily="Times New Roman"/>
                 <TextBlock Text="Cкачайте приложение в Google play или  App Store. Перейдите по в окно регистрации по кнопке РЕГИСТРАЦИЯ" Margin="5 1180 10 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman"/>
-                <TextBlock Text="Как изменить личные данные?" Margin="5 1300 0 0 " HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="26" FontFamily="Times New Roman"/>
-                <TextBlock Text="В главном окне выберите страницу личные данные. Нажмите на" Margin="5 1350 0 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman"/>
-                <Image Source="Images/Account.png" Height=" 35" Margin=" 180 1370 180 0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-                <Image Source="Images/redactor.png" Height=" 15" Margin=" 182 1390 181 0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <TextBlock Text="Как изменить карту для пополнения счета?" Margin="5 1300 0 0 " HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="26" FontFamily="Times New Roman"/>
+                <TextBlock Text="В главном окне выберите страницу личные данные. Нажмите на Пополнение счета.Выберитк " Margin="5 1350 0 0" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman"/>
                 <TextBlock Text="Служба поддержки" HorizontalAlignment="Left" Margin=" 5 1480 0 0" TextWrapping="Wrap" FontSize="15" FontFamily="Times New Roman"/>
                 <TextBlock Text="+7 (495) 786-76-35" Margin="5 1500 0 0" TextWrapping="Wrap" FontSize="25" FontFamily="Times New Roman"/>
                 <TextBlock Text="cyclecompany@gmail.com" TextWrapping="Wrap" FontSize="21" FontFamily="Times New Roman" Margin="5 1530 0 0"/>              

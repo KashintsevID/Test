@@ -13,19 +13,19 @@
             </TabItem.Header>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80"/>
-                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="90"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="80"/>
+                    
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="175*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="0.35*"/>
+                    <ColumnDefinition Width="0.65*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox TextWrapping="Wrap" Text="Имя пользоватеся" Name="UserName" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="106.289,0,64.212,0"></TextBox>
-                <Label Margin="10" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left">Balance:</Label>
-                <TextBox Name="Balance" TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Height=" 14" Width="100" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
+                <TextBox TextWrapping="Wrap" Width="180" Height="50 " Text="Имя пользоватеся" Name="UserName" VerticalAlignment="Bottom"  Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="106.289,0,64.212,0"></TextBox>
+                <Label Margin="10" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
+                <TextBox Name="Balance" TextWrapping="Wrap" FontSize="14" Grid.Column="1" Grid.Row="1" Height=" 16" Width="100" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
 
                 <Button Name="RedactorAccount" Content="Tooltip" Margin="40,40,39.711,40" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
                     <Button.ToolTip>
@@ -36,7 +36,7 @@
                             <Grid>
                                 <Ellipse/>
                                 <Image Width="70" Source="Images/Account.png"/>
-                                <Image Source="Images/redactor.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5"></Image>
+                                <Image Source="Images/redactor.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10 10 10 10"></Image>
                             </Grid>
                         </ControlTemplate>
                     </Button.Template>

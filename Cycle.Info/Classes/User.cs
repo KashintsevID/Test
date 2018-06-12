@@ -21,7 +21,8 @@ namespace Cycle.Info
         public Bicycle Bicycle { get; set; }
         public int BikeTaken { get; set; }
         public DateTime BeginingOfRent { get; set; }
-        
+        public string  PasswordOfCard { get; set; }
+
         //хэширование пароля
         public static string GetHash(string password)
         {

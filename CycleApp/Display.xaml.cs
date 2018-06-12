@@ -28,6 +28,8 @@ namespace CycleApp
             cont = context;
             InitializeComponent();
             this.ListStations.ItemsSource = cont.Stations.ToList();
+            UserName.Text = currentUser.FullName;
+            Balance.Text = currentUser.Balance.ToString();
         }
 
         private void Rules_Click(object sender, RoutedEventArgs e)
