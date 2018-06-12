@@ -14,31 +14,28 @@
 
         <TextBlock Grid.Row="0" FontSize="22" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Times New Roman">Стоимость проката</TextBlock>
         <Button Height="40"  HorizontalAlignment="Left" Margin="7" Click="Back_Click">
-            <Image Height="38"  Source="Images/arrow-back-outline-128.png"></Image>
+            <Image Height="38" Source="Images/arrow-back-outline-128.png"></Image>
         </Button>
 
-        <ScrollViewer    Grid.Row="1"  PanningMode="VerticalOnly" VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Disabled"  Margin="0,10,0,-10"  VerticalAlignment="Top" >
+        <ScrollViewer Grid.Row="1" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,-10" VerticalAlignment="Top">
 
-            <Grid Height=" 1000" >
-                <TextBlock Text="Сколько стоит???" VerticalAlignment="Top" TextAlignment="Center" Margin="10 30 0 0" TextWrapping="Wrap" FontSize="50" FontFamily="Times New Roman"  />
-                <TextBlock Text="Любой велосипед можно взять по тарифу 2 руб/мин. Минимальная стоимость проката - 60 руб (первичный взнос на станции отпаравления). " VerticalAlignment="Top" Margin="10 120 0 0" TextAlignment="Left"  TextWrapping="Wrap" FontSize="20" FontFamily="Times New Roman" ></TextBlock>
-                <TextBlock Text="Условия" HorizontalAlignment="Left"  VerticalAlignment="Top" TextAlignment="Center" Margin="10 250 0 0" TextWrapping="Wrap" FontSize="28"  FontFamily="Times New Roman" ></TextBlock>
-                <TextBlock  Text="" VerticalAlignment="Top" TextAlignment="Left"  Margin="10 300 0 0" TextWrapping="Wrap" FontSize="20" FontFamily="Times New Roman"  ></TextBlock>
-                <TextBlock Text="Неограниченные поездки" VerticalAlignment="Top" FontWeight="UltraBlack"  TextAlignment="Left" Margin="10 320 0 0" TextWrapping="Wrap" FontSize="20" FontFamily="Times New Roman" ></TextBlock>
-                <TextBlock Text="Вы можете брать велосипед неограниченное количество раз."  VerticalAlignment="Top" TextAlignment="Left" Margin="10 350 0 0" TextWrapping="Wrap" FontSize="17"  FontFamily="Times New Roman"></TextBlock>
-                <TextBlock Text="1 логин = 1 велосипед" VerticalAlignment="Top" TextAlignment="Left" Margin="10 420 0 0" TextWrapping="Wrap" FontSize="20" FontWeight="UltraBlack"  FontFamily="Times New Roman"></TextBlock>
-                <TextBlock Text="На один аккаунт вы можете взять только 1 велосипед. Если вы планируете кататься в компании, то всем членам компании необходимо зарегистрироваться самостоятельно" VerticalAlignment="Top" TextAlignment="Left" Margin="10 450 0 0 " TextWrapping="Wrap" FontSize="17" FontFamily="Times New Roman"></TextBlock>
-                <TextBlock Text="Штрафы " FontWeight="UltraBlack" VerticalAlignment="Top" TextAlignment="Left" Margin="10 550 0 0 " TextWrapping="Wrap" FontSize="20"  FontFamily="Times New Roman" ></TextBlock>
+            <Grid Height=" 1000">
+                <TextBlock Text="Сколько стоит?" VerticalAlignment="Top" TextAlignment="Center" Margin="10 30 0 0" TextWrapping="Wrap" FontSize="50" FontFamily="Times New Roman"/>
+                <TextBlock Text="Любой велосипед можно взять по тарифу 2 руб/мин. Минимальная стоимость проката - 60 руб (первичный взнос на станции отпаравления)." VerticalAlignment="Top" Margin="10 120 0 0" TextAlignment="Left" TextWrapping="Wrap" FontSize="20" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="Условия" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Center" Margin="10 250 0 0" TextWrapping="Wrap" FontSize="28" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock VerticalAlignment="Top" TextAlignment="Left" Margin="10 300 0 0" TextWrapping="Wrap" FontSize="20" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="Неограниченные поездки" VerticalAlignment="Top" FontWeight="UltraBlack" TextAlignment="Left" Margin="10 320 0 0" TextWrapping="Wrap" FontSize="20" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="Вы можете брать велосипед неограниченное количество раз." VerticalAlignment="Top" TextAlignment="Left" Margin="10 350 0 0" TextWrapping="Wrap" FontSize="17"  FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="1 логин = 1 велосипед" VerticalAlignment="Top" TextAlignment="Left" Margin="10 420 0 0" TextWrapping="Wrap" FontSize="20" FontWeight="UltraBlack" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="На один аккаунт вы можете взять только 1 велосипед. Если вы планируете кататься в компании, то всем членам компании необходимо зарегистрироваться самостоятельно" VerticalAlignment="Top" TextAlignment="Left" Margin="10 450 0 0" TextWrapping="Wrap" FontSize="17" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="Штрафы" FontWeight="UltraBlack" VerticalAlignment="Top" TextAlignment="Left" Margin="10 550 0 0" TextWrapping="Wrap" FontSize="20"  FontFamily="Times New Roman"></TextBlock>
                 <TextBlock Text="Если вы не сдадите велосипед в течение 48ч, то Вам будет выписан штраф 15 000 руб" VerticalAlignment="Top" TextAlignment="Left" Margin="10 580 0 0" TextWrapping="Wrap" FontSize="17" FontFamily="Times New Roman"></TextBlock>
-                <TextBlock Text="Время проката" VerticalAlignment="Top" TextAlignment="Left" Margin="10 650 0 0 " FontWeight="UltraBlack" TextWrapping="Wrap"  FontSize="20" FontFamily="Times New Roman" ></TextBlock>
-                <TextBlock Text="Время проката начинается с момента, когда вы внесли первый взнос=60 руб в стационарном автомате. Заканчивается - когда в автомате вы подтвердите оставление велосипеда на станции и автоматический замок закроется" VerticalAlignment="Top" TextAlignment="Left" Margin="10 690 0 0  " TextWrapping="Wrap" FontSize="17" FontFamily="Times New Roman"></TextBlock>
-                <TextBlock Text="Служба поддержки" HorizontalAlignment="Left" Margin=" 5 870 0 0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontFamily="Times New Roman" />
-                <TextBlock Text="+7 (495) 786-76-35" Margin="5 900 0 0 " TextWrapping="Wrap" FontSize="25" VerticalAlignment="Top" FontFamily="Times New Roman"/>
+                <TextBlock Text="Время проката" VerticalAlignment="Top" TextAlignment="Left" Margin="10 650 0 0 " FontWeight="UltraBlack" TextWrapping="Wrap" FontSize="20" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="Время проката начинается с момента, когда вы внесли первый взнос=60 руб в стационарном автомате. Заканчивается - когда в автомате вы подтвердите оставление велосипеда на станции и автоматический замок закроется" VerticalAlignment="Top" TextAlignment="Left" Margin="10 690 0 0" TextWrapping="Wrap" FontSize="17" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="Служба поддержки" HorizontalAlignment="Left" Margin=" 5 870 0 0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontFamily="Times New Roman"/>
+                <TextBlock Text="+7 (495) 786-76-35" Margin="5 900 0 0" TextWrapping="Wrap" FontSize="25" VerticalAlignment="Top" FontFamily="Times New Roman"/>
                 <TextBlock Text="cyclecompany@gmail.com" TextWrapping="Wrap" FontSize="21" VerticalAlignment="Top" FontFamily="Times New Roman" Margin="5 930 0 0"/>
-
             </Grid>
-
-
         </ScrollViewer>
     </Grid>
 </Window>
