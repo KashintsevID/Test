@@ -1,0 +1,23 @@
+﻿<Window x:Class="CycleApp.StAppTakeLastW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CycleApp"
+        mc:Ignorable="d"
+        Title="StAppTakeLastW" Height="570" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Button Height="40"  HorizontalAlignment="Left" Margin="7"  VerticalAlignment="Top"  ToolTip="Вернутся к выбору другого велосипеда" >
+            <Image Height="38" Source="Images/arrow-back-outline-128.png"></Image>
+        </Button>
+        <TextBlock FontSize="30" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Times New Roman">Bозьмите выбранный велосипед из слота номер</TextBlock>
+        <TextBox Name="NumserOsSlot" Grid.Row="1" Height="20" Width="30"  ></TextBox>
+        <Button FontSize=" 20" Grid.Row="2" VerticalAlignment="Top"   HorizontalAlignment="Center"  FontFamily="Times New Roman" Height="60" Width=" 250" Click="ButtonEnd_Click">
+            <TextBlock TextWrapping="Wrap">Взять велосипед и завершить обслуживание</TextBlock> </Button>
+    </Grid>
+</Window>

@@ -27,6 +27,7 @@ namespace CycleApp
             cont = context;
             currentUser=curUser;
             InitializeComponent();
+            
             foreach (var user in cont.Users)
             {
                 if (user.Email == currentUser.Email)
@@ -39,12 +40,11 @@ namespace CycleApp
                     {
                        NumberOfCard.Text = user.CardNumber;
                     }
+                   
                 }
             }
-
             }
-            
-
+      
         private void ButtonReturn_Click(object sender, RoutedEventArgs e)
         {
             DialogResult  = true;
@@ -61,6 +61,7 @@ namespace CycleApp
             }
             else
             {
+                
                 foreach (var user in cont.Users)
                 {
                     if (user.Email == currentUser.Email)
@@ -93,11 +94,11 @@ namespace CycleApp
 
         private void ButtonChangeCard_Click(object sender, RoutedEventArgs e)
         {
-          //  this.Visibility = Visibility.Hidden;
+            this.Visibility = Visibility.Hidden;
             var changeCardWindow = new ChangeCard(cont,currentUser);
             changeCardWindow.ShowDialog();
             Update(cont,currentUser);
-           // this.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Visible;
 
 
         }

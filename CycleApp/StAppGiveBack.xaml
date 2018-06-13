@@ -1,0 +1,15 @@
+﻿<Window x:Class="CycleApp.StAppGiveBack"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CycleApp"
+        mc:Ignorable="d"
+        Title="StAppGiveBack" Height="570"  Width="500" >
+    <Grid>
+        <TextBox Name="Balance" TextWrapping="Wrap" FontSize="20"   Height="40" Width="200" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
+        <Label Margin="10" VerticalAlignment="Top"   FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
+        <Button Height=" 50" FontSize="20" Width="250" Click="ButtonBack_Click">Вернуть велосипед</Button>
+
+    </Grid>
+</Window>

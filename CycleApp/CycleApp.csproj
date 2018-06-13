@@ -85,6 +85,18 @@
     <Compile Include="Rules of renting bicycles.xaml.cs">
       <DependentUpon>Rules of renting bicycles.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StAppEnter.xaml.cs">
+      <DependentUpon>StAppEnter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StAppGiveBack.xaml.cs">
+      <DependentUpon>StAppGiveBack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StAppTakeBike.xaml.cs">
+      <DependentUpon>StAppTakeBike.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StAppTakeLastW.xaml.cs">
+      <DependentUpon>StAppTakeLastW.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TransferMoney.xaml.cs">
       <DependentUpon>TransferMoney.xaml</DependentUpon>
     </Compile>
@@ -125,6 +137,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Rules of renting bicycles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StAppEnter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StAppGiveBack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StAppTakeBike.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StAppTakeLastW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
