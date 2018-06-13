@@ -69,7 +69,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock TextWrapping="Wrap" Width="180" Height="50" Text="Имя пользователя" Name="UserName" VerticalAlignment="Bottom" Grid.Column="1" FontSize="25" FontFamily=" Times New Roman" HorizontalAlignment="Right" Margin="100 10"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Width="180" Height="50" Text="Имя пользователя" Name="UserName" VerticalAlignment="Bottom" Grid.Column="1" FontSize="25" FontFamily=" Times New Roman" HorizontalAlignment="Right" Margin="100 10 50 0"></TextBlock>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
                     <Label FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
                     <TextBlock Name="Balance" TextWrapping="Wrap" FontSize="14" Height="24" Width="100" HorizontalAlignment="Center"></TextBlock>

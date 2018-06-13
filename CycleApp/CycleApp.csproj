@@ -73,6 +73,9 @@
     <Compile Include="Price.xaml.cs">
       <DependentUpon>Price.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfileEditing.xaml.cs">
+      <DependentUpon>ProfileEditing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Price.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileEditing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

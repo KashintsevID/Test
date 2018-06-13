@@ -78,9 +78,7 @@ namespace CycleApp
             IsEnabled = false;
             var transfer = new TransferMoney(currentUser);
             if (transfer.ShowDialog() == true || transfer.IsActive == false)
-            {
                 IsEnabled = true;
-            }
         }
 
         private void ComboBoxMetro_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -105,7 +103,11 @@ namespace CycleApp
 
         private void RedactorAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            IsEnabled = false;
+            var editingProfile = new ProfileEditing(cont, currentUser);
+            if (editingProfile.ShowDialog() == true || editingProfile.IsActive == false)
+                IsEnabled = true;
+            UserName.Text = currentUser.FullName;
         }
     }
 }
