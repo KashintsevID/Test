@@ -146,7 +146,7 @@
                         </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="ButtonDeleteHistory" Grid.Row="2" Margin="5 10 0 5" Height="50" Width="150" Click="ButtonDeleteHistory_Click">Удалить историю</Button>
+                <Button x:Name="ButtonDeleteHistory" Grid.Row="2" Margin="5 10 0 5" Height="50" Width="150" Click="ButtonDeleteHistory_Click">Очистить историю</Button>
             </Grid>
         </TabItem>
 

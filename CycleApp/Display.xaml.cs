@@ -95,7 +95,7 @@ namespace CycleApp
         {
             foreach (Ride ride in cont.Rides)
             {
-                if (ride.UserId == currentUser.Id)
+                if (ride.UserId == currentUser.Id && ride.IsRideFinished == true)
                     cont.Rides.Remove(ride);
             }
             cont.SaveChanges();
