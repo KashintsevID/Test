@@ -11,7 +11,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button x:Name="ButtonReturn" Height="40" HorizontalAlignment="Left" Margin="20" Click="ButtonReturn_Click">
@@ -21,10 +20,6 @@
         <StackPanel Margin="30 10" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="2">
             <TextBlock Margin="0 0 5 0" FontSize="20">Полное имя</TextBlock>
             <TextBox x:Name="TextBoxFullName" Width="303" HorizontalAlignment="Right" FontSize="17" Margin="5 0 0 0"></TextBox>
-        </StackPanel>
-        <StackPanel Margin="30 10" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="3">
-            <TextBlock Margin="0 0 5 0" FontSize="20">Что-то ещё (карта)</TextBlock>
-            <TextBox x:Name="TextBoxCardNumber" FontSize="17" Margin="5 0 0 0" Width="243" HorizontalAlignment="Right"></TextBox>
         </StackPanel>
         <Button x:Name="ButtonSave" Grid.Row="4" FontSize="20" Height="55" Width="260" Click="ButtonSave_Click">Сохранить изменения</Button>
     </Grid>

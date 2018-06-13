@@ -5,28 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
-        Title="StAppTakeBike"   Height="570"  Width="500" >
+        Title="StAppTakeBike" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="0.25*"/>
             <RowDefinition Height="0.20*"/>
             <RowDefinition Height="0.30*"/>
             <RowDefinition Height="0.25*"/>
         </Grid.RowDefinitions>
-
-        <TextBox  TextWrapping="Wrap" Width="270" Height="70 " Text="Имя пользователя" Name="UserName" VerticalAlignment="Center"  Grid.Row="0"  FontSize="25" FontFamily=" Times New Roman" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" ></TextBox>
-        <Label Margin="10" VerticalAlignment="Top" Grid.Row="1"  FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
-        <TextBox Name="Balance" TextWrapping="Wrap" FontSize="20"  Grid.Row="1" Height="40" Width="200" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
-        <ScrollViewer Grid.Row="2" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,-10" VerticalAlignment="Top" >
+        <Button Name="ButtonUpdate" Height="40" Width="40" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="15" Click="ButtonUpdate_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Source="Images/update.png" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Center"></Image>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock TextWrapping="Wrap" Width="270" Height="70 " TextAlignment="Center" Grid.Row="1" Text="Имя пользователя" Name="UserName" VerticalAlignment="Center" FontSize="25" FontFamily=" Times New Roman" HorizontalAlignment="Center" ></TextBlock>
+        <Label Margin="10" VerticalAlignment="Top" Grid.Row="2"  FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
+        <TextBlock Name="Balance" TextWrapping="Wrap" FontSize="20"  Grid.Row="2" Height="40" Width="200" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBlock>
+        <ScrollViewer Grid.Row="3" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,-10" VerticalAlignment="Top" >
             <Grid>
-                    <DataGrid Name="DGBicyclesOnStation">
+                <DataGrid Name="DGBicyclesOnStation">
                     <DataGridTextColumn Width="0.5*" Header="Номер велосипеда" Binding="{Binding Id}">
                     </DataGridTextColumn>
                     <DataGridTextColumn Width="0.5*" Header="Номер слота" Binding="{Binding CurrentSlot}"></DataGridTextColumn>
-                </DataGrid>
+                </DataGrid>    
             </Grid>
         </ScrollViewer>
-        <Button Name="Exit" Content="Tooltip"  Grid.Row="3" Height="100" Width="200" HorizontalAlignment="Left">
+        <Button Name="Exit" Content="Tooltip"  Grid.Row="4" Height="100" Width="200" HorizontalAlignment="Left" Click="Exit_Click">
             <Button.ToolTip>
                 Выйти из аккаунта
             </Button.ToolTip>

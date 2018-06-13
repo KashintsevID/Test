@@ -24,22 +24,14 @@ namespace CycleApp
         private Context cont;
         private User currentUser;
         private Station currentStation;
-        public StAppTakeBike(Context context,User curUser,Station currentStation)
+        public StAppTakeBike(Context context,User curUser,Station curStation)
         {
-            this.currentStation = currentStation;
+            currentStation = curStation;
             currentUser = curUser;
             cont = context;
-            InitializeComponent();UserName.Text = currentUser.FullName;
+            InitializeComponent();
+            UserName.Text = currentUser.FullName;
             Balance.Text = currentUser.Balance.ToString();
-            foreach (var b in cont.Bicycles)
-            {
-                if (b.StationId==currentStation.Id)
-                {
-                    currentStation.BicyclesONStation.Add(b);
-                }
-            }
-
-            DGBicyclesOnStation.ItemsSource = currentStation.BicyclesONStation;
         }
         private bool TryGetSelectedBicycle(out Bicycle  bicycle)
         {
@@ -65,6 +57,18 @@ namespace CycleApp
             {
                 MessageBox.Show("На вашем счёте недостаточно средств, пополните баланс через мобильное приложение"); 
             }
+        }
+
+        private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Balance.Text = currentUser.Balance.ToString();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            var stAppEnter = new StAppEnter();
+            Close();
+            stAppEnter.Show();
         }
     }
 }

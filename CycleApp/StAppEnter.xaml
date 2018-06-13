@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
-        Title="StAppEnter" Height="570" Width="570" MinWidth="500" MaxWidth="500">
+        Title="StAppEnter" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -29,10 +29,11 @@
             <Image Margin="20" Height="120" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             </Image>
         </StackPanel>
-        <TextBox Name="StationName"  FontSize="20" Foreground="White" Grid.Row="0" Height=" 30" Grid.Column="0" Grid.ColumnSpan="3" MaxWidth="300"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <TextBox.Background>
-                <SolidColorBrush Color="Transparent"></SolidColorBrush>            </TextBox.Background>
-        </TextBox>
+        <TextBlock Name="StationName" Margin="20" FontSize="20" Foreground="White" Grid.Row="0" Height=" 30" Grid.Column="0" Grid.ColumnSpan="3" MaxWidth="300"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <TextBlock.Background>
+                <SolidColorBrush Color="Transparent"></SolidColorBrush>          
+            </TextBlock.Background>
+        </TextBlock>
         <TextBlock Height="100" TextAlignment="Center" FontSize="70" Foreground="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="10 10 10 10">CYCLE</TextBlock>
         <TextBlock Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="15">Введите свои данные</TextBlock>
         <TextBlock Foreground="White" FontFamily="Times New Roman" Grid.Row="1" FontSize="22" Margin="15 5">Email</TextBlock>

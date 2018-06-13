@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
-        Title="StAppGiveBack" Height="570"  Width="500" >
+        Title="StAppGiveBack" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <Grid>
         <TextBox Name="Balance" TextWrapping="Wrap" FontSize="20"   Height="40" Width="200" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
         <Label Margin="10" VerticalAlignment="Top"   FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>

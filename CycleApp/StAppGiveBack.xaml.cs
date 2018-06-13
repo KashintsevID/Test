@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cycle.Info;
+using Cycle.Info.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +21,7 @@ namespace CycleApp
     /// </summary>
     public partial class StAppGiveBack : Window
     {
-        public StAppGiveBack()
+        public StAppGiveBack(Context context, User curUser, Station curStation)
         {
             InitializeComponent();
         }

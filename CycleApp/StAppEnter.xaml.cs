@@ -26,15 +26,13 @@ namespace CycleApp
         public StAppEnter()
         {
             InitializeComponent();
+            TextBoxEmail.Focus();
             foreach (var station in context.Stations)
             {
                 if (station.Adress=="ул. Крымский Вал, д.3")
-                {
                     currentStation = station;
-                }
             }
             StationName.Text = currentStation.Adress.ToString();
-
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
@@ -55,16 +53,23 @@ namespace CycleApp
 
             foreach (var user in context.Users)
             {
-                if ((user.Email == TextBoxEmail.Text) && (user.Password == User.GetHash(PasswordBox.Password.Trim())))
+                if ((user.Email == TextBoxEmail.Text.Trim()) && (user.Password == User.GetHash(PasswordBox.Password.Trim())))
                 {
                     User currentUser = user;
-                    //var stAppGiveBack = new StAppTakeBike();
-                    //stAppGiveBack.Show();
-                    var stAppTakeBike = new StAppTakeBike(context, currentUser,currentStation);
+                    foreach (Ride ride in context.Rides)
+                    {
+                        if (ride.UserId == currentUser.Id && ride.IsRideFinished == false)
+                        {
+                            var stAppLeaveBike = new StAppGiveBack(context, currentUser, currentStation);
+                            stAppLeaveBike.Show();
+                            this.Close();
+                            return;
+                        }
+                    }
+                    var stAppTakeBike = new StAppTakeBike(context, currentUser, currentStation);
                     stAppTakeBike.Show();
                     this.Close();
                     return;
-
                 }
             }
 
