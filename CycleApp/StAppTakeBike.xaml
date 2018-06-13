@@ -20,7 +20,7 @@
         <ScrollViewer Grid.Row="2" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,-10" VerticalAlignment="Top" >
             <Grid>
                     <DataGrid Name="DGBicyclesOnStation">
-                    <DataGridTextColumn Width="0.5*" Header="Номер велосипеда" Binding="{Binding Id} ">
+                    <DataGridTextColumn Width="0.5*" Header="Номер велосипеда" Binding="{Binding Id}">
                     </DataGridTextColumn>
                     <DataGridTextColumn Width="0.5*" Header="Номер слота" Binding="{Binding CurrentSlot}"></DataGridTextColumn>
                 </DataGrid>

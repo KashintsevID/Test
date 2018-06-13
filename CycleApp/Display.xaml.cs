@@ -29,11 +29,11 @@ namespace CycleApp
             currentUser = curUser;
             cont = context;
             InitializeComponent();
+            CheckingActiveRide();
             this.ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
             UserName.Text = currentUser.FullName;
             Balance.Text = currentUser.Balance.ToString();
             DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id).ToList();
-           
             List<string> metroStations = new List<string>();
             foreach (Station station in cont.Stations)
             {
@@ -41,6 +41,32 @@ namespace CycleApp
                     metroStations.Add(station.NearestMetroStation);
             }
             ComboBoxMetro.ItemsSource = metroStations.OrderBy(m => m);
+        }
+
+        private void CheckingActiveRide()
+        {
+            foreach (Ride ride in cont.Rides)
+            {
+                if (ride.UserId == currentUser.Id && ride.IsRideFinished == false)
+                {
+                    ActiveRide.Text = $"Текущая поездка:\n Велосипед - {ride.BicycleId}\n Начало поездки - ";
+                    return;
+                }
+            }
+            ActiveRide.Text = "Нет активных поездок";
+        }
+
+        private void FilteringStations()
+        {
+            if (ComboBoxMetro.SelectedItem != null)
+            {
+                string metro = ComboBoxMetro.SelectedItem as string;
+                List<Station> bikeStations = new List<Station>();
+                bikeStations.AddRange(cont.Stations.Where(s => s.NearestMetroStation.Equals(metro)));
+                ListStations.ItemsSource = bikeStations;
+            }
+            else
+                ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
         }
 
         private void Rules_Click(object sender, RoutedEventArgs e)
@@ -94,12 +120,15 @@ namespace CycleApp
 
         private void ComboBoxMetro_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if (ComboBoxMetro.SelectedItem != null)
-            //{
-            //    string metro = ComboBoxMetro.ItemsSource.ToString();
-            //    List<Station> bikeStations = cont.Stations.Where(s => s.NearestMetroStation.Equals(metro)).ToList();
-            //    ListStations.ItemsSource = bikeStations;
-            //}
+            FilteringStations();
+        }
+
+        private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Balance.Text = currentUser.Balance.ToString();
+            DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id).ToList();
+            FilteringStations();
+            CheckingActiveRide();
         }
     }
 }

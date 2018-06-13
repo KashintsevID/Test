@@ -5,190 +5,216 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Display" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
-    <TabControl TabStripPlacement="Top" Name="Menu">
-        <TabItem Name="Maps" Width="120" HorizontalAlignment="Left">
-            <TabItem.Header >
-                <Image Height="30" Source="Images/location.png"></Image>
-            </TabItem.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Margin="0 20" HorizontalAlignment="Center" FontWeight="Medium" FontSize="16">Станции</TextBlock>
-                <ComboBox x:Name="ComboBoxMetro" Grid.Row="1" Margin="7 5" IsReadOnly="False" IsEditable="True" Text="{Binding NearestMetroStation}" SelectionChanged="ComboBoxMetro_SelectionChanged"></ComboBox>
-                <DataGrid Margin="5 10 0 5" Grid.Row="2" x:Name="ListStations" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" IsReadOnly="True">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Width="2.3*" Binding="{Binding Adress}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="30 15" HorizontalAlignment="Left" FontSize="30" FontWeight="DemiBold">CYCLE</TextBlock>
+        <Button Name="ButtonUpdate" Height="40" Width="40" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="15" Click="ButtonUpdate_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Source="Images/update.png" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Center"></Image>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TabControl TabStripPlacement="Top" Name="Menu" Grid.Row="1" Grid.ColumnSpan="2">
+            <TabItem Name="Maps" Width="120" Height="45" HorizontalAlignment="Left">
+                <TabItem.Header >
+                    <Image Height="30" Source="Images/location.png"></Image>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Margin="0 10" HorizontalAlignment="Center" FontWeight="Medium" FontSize="25">Станции</TextBlock>
+                    <ComboBox x:Name="ComboBoxMetro" Grid.Row="1" Margin="7 5" IsReadOnly="False" IsEditable="True" Text="{Binding NearestMetroStation}" SelectionChanged="ComboBoxMetro_SelectionChanged"></ComboBox>
+                    <DataGrid Margin="5 10 0 5" Grid.Row="2" x:Name="ListStations" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="2.3*" Binding="{Binding Adress}">
+                                <DataGridTextColumn.Header >
+                                    <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
                                     Адрес
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Width="1.7*" Binding="{Binding NearestMetroStation}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                                    </TextBlock>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="1.7*" Binding="{Binding NearestMetroStation}">
+                                <DataGridTextColumn.Header >
+                                    <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
                                     Ст. метро
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Width="1.2*" Binding="{Binding NumberOfSlots}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap">
+                                    </TextBlock>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="1.2*" Binding="{Binding NumberOfSlots}">
+                                <DataGridTextColumn.Header >
+                                    <TextBlock TextWrapping="Wrap">
                                     Свободных стоек
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Width="1.2*" Binding="{Binding NumberOfBikes}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap">
+                                    </TextBlock>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="1.2*" Binding="{Binding NumberOfBikes}">
+                                <DataGridTextColumn.Header >
+                                    <TextBlock TextWrapping="Wrap">
                                     Свободных велосипедов
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-        </TabItem>
+                                    </TextBlock>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
 
-        <TabItem Name="Account" Width="120" HorizontalAlignment="Left">
-            <TabItem.Header>
-                <Image Height=" 30" Source="Images/Account.png"></Image>
-            </TabItem.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+            <TabItem Name="Account" Width="120" Height="45" HorizontalAlignment="Left">
+                <TabItem.Header>
+                    <Image Height=" 30" Source="Images/Account.png"></Image>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
-                    <Button x:Name="RedactorAccount" Margin="40" Click="RedactorAccount_Click" Content="Tooltip">
-                        <Button.ToolTip>
-                            Изменить личные данные
-                        </Button.ToolTip>
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Grid>
-                                    <Ellipse/>
-                                    <Image Width="70" Source="Images/Account.png"/>
-                                    <Image Source="Images/redactor.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10 10 10 10"></Image>
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <TextBlock TextWrapping="Wrap" Width="Auto" Height="Auto" Text="Имя пользователя" Name="UserName" VerticalAlignment="Bottom" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="10"></TextBlock>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Margin="10" VerticalAlignment="Top" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Center">Баланс:</Label>
-                            <TextBlock Name="Balance" TextWrapping="Wrap" TextAlignment="Right" FontSize="13" Height="20" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                            <TextBlock VerticalAlignment="Center" Margin="10">руб.</TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                        <Button x:Name="RedactorAccount" Margin="30" Click="RedactorAccount_Click" Content="Tooltip">
+                            <Button.ToolTip>
+                                Изменить личные данные
+                            </Button.ToolTip>
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <Ellipse/>
+                                        <Image Width="70" Source="Images/Account.png"/>
+                                        <Image Source="Images/redactor.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10 10 10 10"></Image>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <TextBlock TextWrapping="Wrap" Width="Auto" Height="Auto" Text="Имя пользователя" Name="UserName" VerticalAlignment="Bottom" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="10"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Margin="10" VerticalAlignment="Top" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Center">Баланс:</Label>
+                                <TextBlock Name="Balance" TextWrapping="Wrap" TextAlignment="Right" FontSize="13" Height="20" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock VerticalAlignment="Center" Margin="10">руб.</TextBlock>
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
-                </StackPanel>
 
-                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0.115,0">
-                    <Button Name="TransferMoney" HorizontalAlignment="Center" Height="60" FontSize="20" FontFamily="Times New Roman" Width="350" Click="TransferMoney_Click">
-                        Пополнить баланс
-                    </Button>
+                    <TextBlock x:Name="ActiveRide" Grid.Row="1" Height="Auto" Width="Auto" FontSize="20" HorizontalAlignment="Center" Margin="20"></TextBlock>
 
-                    <Button Name="Exit" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="480" Margin="10 40 10 0" Content="Tooltip"  Click="Exit_Click">
-                        <Button.ToolTip>
-                            Выйти из аккаунта
-                        </Button.ToolTip>
+                    <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0,0,0.115,0">
+                        <Button Name="TransferMoney" HorizontalAlignment="Center" Height="60" FontSize="20" FontFamily="Times New Roman" Width="350" Click="TransferMoney_Click">
+                            Пополнить баланс
+                        </Button>
+
+                        <Button Name="Exit" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="480" Margin="10 20 10 0" Content="Tooltip" Click="Exit_Click">
+                            <Button.ToolTip>
+                                Выйти из аккаунта
+                            </Button.ToolTip>
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <Image Source="Images/exit.png" HorizontalAlignment="Left" Height="30"></Image>
+                                        <TextBlock FontSize="22" Width=" 70" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Выйти</TextBlock>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="History" Width="120" Height="45" HorizontalAlignment="Right">
+                <TabItem.Header >
+                    <Image Height="30" Source="Images/bike.png"></Image>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock FontSize="22" Grid.Row="1" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="0 15">История ваших поездок</TextBlock>
+                    <DataGrid x:Name="DataGridRides" Grid.Row="2" Margin="10" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="2.3*" Binding="{Binding BeginingOfRide}">
+                                <DataGridTextColumn.Header >
+                                    <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                                    Начало поездки
+                                    </TextBlock>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="2.3*" Binding="{Binding TotalRideTime}">
+                                <DataGridTextColumn.Header >
+                                    <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                                    Время поездки
+                                    </TextBlock>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="2.3*" Binding="{Binding MoneyPaid}">
+                                <DataGridTextColumn.Header >
+                                    <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                                    Снято средств
+                                    </TextBlock>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Grid.Row="3" Margin="10" Width="200" Height="40" FontSize="14">Очистить историю поездок</Button>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="Help" Width="120" Height="45" HorizontalAlignment="Right">
+                <TabItem.Header>
+                    <Image Height="30" Source="Images/help.png"></Image>
+                </TabItem.Header>
+                <StackPanel Orientation="Vertical">
+                    <Button Name="Rules" Click="Rules_Click">
                         <Button.Template>
                             <ControlTemplate>
                                 <Grid>
-                                    <Image Source="Images/exit.png" HorizontalAlignment="Left" Height="30"></Image>
-                                    <TextBlock FontSize="22" Width=" 70" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Выйти</TextBlock>
+                                    <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40" Height="30"></Image>
+                                    <TextBlock FontSize="22" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Правила пользования проката</TextBlock>
                                 </Grid>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+                    <Button Name="Price" Click="Price_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40" Height="30"></Image>
+                                    <TextBlock FontSize="22" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Стоимость проката</TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Name="AboutOurCompany" Click="AboutOurCompany_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40" Height=" 30"></Image>
+                                    <TextBlock FontSize="22" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">О CYCLE</TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Image Source="Images/men.png" Height="100" Margin="250 30 20 20" ></Image>
                 </StackPanel>
-            </Grid>
-        </TabItem>
-
-        <TabItem Name="History" Width="120" HorizontalAlignment="Right">
-            <TabItem.Header >
-                <Image Height="30" Source="Images/bike.png"></Image>
-            </TabItem.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock FontSize="22" Grid.Row="0" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="0 15">История ваших поездок</TextBlock>
-                <DataGrid x:Name="DataGridRides" Grid.Row="1" Margin="10" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" IsReadOnly="True">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Width="2.3*" Binding="{Binding BeginingOfRide}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
-                                    Начало поездки
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Width="2.3*" Binding="{Binding TotalRideTime}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
-                                    Время поездки
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Width="2.3*" Binding="{Binding MoneyPaid}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
-                                    Снято средств
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-                <Button Grid.Row="2" Margin="10" Width="200" Height="40" FontSize="14">Очистить историю поездок</Button>
-            </Grid>
-        </TabItem>
-
-        <TabItem Name="Help" Width="120" HorizontalAlignment="Right">
-            <TabItem.Header>
-                <Image Height="30" Source="Images/help.png"></Image>
-            </TabItem.Header>
-            <StackPanel Orientation="Vertical">
-                <Button Name="Rules" Click="Rules_Click">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Grid>
-                                <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40" Height="30"></Image>
-                                <TextBlock FontSize="22" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Правила пользования проката</TextBlock>
-                            </Grid>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Name="Price" Click="Price_Click">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Grid>
-                                <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40" Height="30"></Image>
-                                <TextBlock FontSize="22" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Стоимость проката</TextBlock>
-                            </Grid>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
-                <Button Name="AboutOurCompany" Click="AboutOurCompany_Click">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Grid>
-                                <Image Source="Images/right.png" HorizontalAlignment="Right" Margin="40" Height=" 30"></Image>
-                                <TextBlock FontSize="22" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">О CYCLE</TextBlock>
-                            </Grid>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Image Source="Images/men.png" Height="100" Margin="250 30 20 20" ></Image>
-            </StackPanel>
-        </TabItem>
-    </TabControl>
+            </TabItem>
+        </TabControl>
+    </Grid>
 </Window>
 
