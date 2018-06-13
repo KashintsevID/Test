@@ -56,39 +56,17 @@
     <Compile Include="Classes\User.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DBRepository.cs" />
-    <Compile Include="Migrations\201806130030027_init_ten.cs" />
-    <Compile Include="Migrations\201806130030027_init_ten.Designer.cs">
-      <DependentUpon>201806130030027_init_ten.cs</DependentUpon>
+    <Compile Include="Migrations\201806131113145_init_twelve.cs" />
+    <Compile Include="Migrations\201806131113145_init_twelve.Designer.cs">
+      <DependentUpon>201806131113145_init_twelve.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806121641105_init_five.cs" />
-    <Compile Include="Migrations\201806121641105_init_five.Designer.cs">
-      <DependentUpon>201806121641105_init_five.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806130153030_Datbase.cs" />
-    <Compile Include="Migrations\201806130153030_Datbase.Designer.cs">
-      <DependentUpon>201806130153030_Datbase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806130935109_DB.cs" />
-    <Compile Include="Migrations\201806130935109_DB.Designer.cs">
-      <DependentUpon>201806130935109_DB.cs</DependentUpon>
+    <Compile Include="Migrations\201806131243290_ini_thirteen.cs" />
+    <Compile Include="Migrations\201806131243290_ini_thirteen.Designer.cs">
+      <DependentUpon>201806131243290_ini_thirteen.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806121632188_init_four.resx">
-      <DependentUpon>201806121632188_init_four.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806121641105_init_five.resx">
-      <DependentUpon>201806121641105_init_five.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806130153030_Datbase.resx">
-      <DependentUpon>201806130153030_Datbase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806130935109_DB.resx">
-      <DependentUpon>201806130935109_DB.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -96,8 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806130030027_init_ten.resx">
-      <DependentUpon>201806130030027_init_ten.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806131113145_init_twelve.resx">
+      <DependentUpon>201806131113145_init_twelve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131243290_ini_thirteen.resx">
+      <DependentUpon>201806131243290_ini_thirteen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

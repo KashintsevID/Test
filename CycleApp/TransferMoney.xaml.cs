@@ -41,18 +41,14 @@ namespace CycleApp
                     }
                 }
             }
-
-            }
+        }
             
-
         private void ButtonReturn_Click(object sender, RoutedEventArgs e)
         {
             DialogResult  = true;
             Close();
         }
-
         
-
         private void ButtonAddMoney_Click(object sender, RoutedEventArgs e)
         {
             if (Sum.Text == "Введите сумму")
@@ -64,10 +60,7 @@ namespace CycleApp
                 foreach (var user in cont.Users)
                 {
                     if (user.Email == currentUser.Email)
-                    {
                         user.Balance += decimal.Parse(Sum.Text);
-
-                    }
                 }
                 cont.SaveChanges();
                 MessageBox.Show("Баланс пополнен на " + int.Parse(Sum.Text) + "рублей");
@@ -98,8 +91,7 @@ namespace CycleApp
             changeCardWindow.ShowDialog();
             Update(cont,currentUser);
            // this.Visibility = Visibility.Visible;
-
-
+           
         }
     }
 }

@@ -30,13 +30,8 @@ namespace CycleApp
             InitializeComponent();
             this.ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
             UserName.Text = currentUser.FullName;
-            foreach (var user in cont.Users)
-            {
-                if (user.Email==currentUser.Email)
-                {
-                    Balance.Text = user.Balance.ToString();
-                }
-            }
+            Balance.Text = currentUser.Balance.ToString();
+            DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id).ToList();
            
             List<string> metroStations = new List<string>();
             foreach (Station station in cont.Stations)
@@ -53,7 +48,6 @@ namespace CycleApp
             Hide();
             rulesWindow.ShowDialog();
             Show();
-            
         }
 
         private void Price_Click(object sender, RoutedEventArgs e)
@@ -85,20 +79,26 @@ namespace CycleApp
             var transfer = new TransferMoney(cont,currentUser);
             
             if (transfer.ShowDialog() == true || transfer.IsActive == false)
-            {
                 IsEnabled = true;
-            }
             UpdateBalance(cont,currentUser);
         }
+
         private void UpdateBalance(Context cont,User currentUser)
         {
             foreach (var user in cont.Users)
             {
                 if (user.Email == currentUser.Email)
-                {
                     Balance.Text = user.Balance.ToString();
-                }
             }
+        }
+
+        private void RedactorAccount_Click(object sender, RoutedEventArgs e)
+        {
+            IsEnabled = false;
+            var editingProfile = new ProfileEditing(cont, currentUser);
+            if (editingProfile.ShowDialog() == true || editingProfile.IsActive == false)
+                IsEnabled = true;
+            UserName.Text = currentUser.FullName;
         }
 
         private void ComboBoxMetro_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -110,7 +110,5 @@ namespace CycleApp
             //    ListStations.ItemsSource = bikeStations;
             //}
         }
-
-        
     }
 }

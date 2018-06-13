@@ -1,13 +1,12 @@
 ﻿<Window x:Class="CycleApp.Display"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
-        Title="Display" Height="600" MinWidth="470" Width="470">
+        Title="Display" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <TabControl TabStripPlacement="Top" Name="Menu">
-        <TabItem Name="Maps" Width="110" HorizontalAlignment="Left">
+        <TabItem Name="Maps" Width="120" HorizontalAlignment="Left">
             <TabItem.Header >
                 <Image Height="30" Source="Images/location.png"></Image>
             </TabItem.Header>
@@ -54,7 +53,7 @@
             </Grid>
         </TabItem>
 
-        <TabItem Name="Account" Width="110" HorizontalAlignment="Left">
+        <TabItem Name="Account" Width="120" HorizontalAlignment="Left">
             <TabItem.Header>
                 <Image Height=" 30" Source="Images/Account.png"></Image>
             </TabItem.Header>
@@ -71,11 +70,11 @@
                    
                 </Grid.ColumnDefinitions>
 
-                <TextBox TextWrapping="Wrap" Width="250" Height="50 " Text="Имя пользователя" Name="UserName" VerticalAlignment="Bottom"  Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="10"></TextBox>
+                <TextBlock TextWrapping="Wrap" Width="250" Height="50 " Text="Имя пользователя" Name="UserName" VerticalAlignment="Bottom"  Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="10"></TextBlock>
                 <Label Margin="10" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
-                <TextBox Name="Balance" TextWrapping="Wrap" FontSize="13" Grid.Column="1" Grid.Row="1" Height="20" Width="100" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
+                <TextBlock Name="Balance" TextWrapping="Wrap" FontSize="13" Grid.Column="1" Grid.Row="1" Height="20" Width="100" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBlock>
 
-                <Button Name="RedactorAccount" Content="Tooltip" Margin="40,40,8,40" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+                <Button x:Name="RedactorAccount" Click="RedactorAccount_Click" Content="Tooltip" Margin="40,40,8,40" Grid.Column="0" Grid.RowSpan="2">
                     <Button.ToolTip>
                         Изменить личные данные
                     </Button.ToolTip>
@@ -90,11 +89,11 @@
                     </Button.Template>
                 </Button>
                 <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="0,0,0.115,0">
-                    <Button Name="TransferMoney" HorizontalAlignment="Left" Height=" 70" FontSize="20" FontFamily="Times New Roman" Width="450" Click="TransferMoney_Click">
+                    <Button Name="TransferMoney" HorizontalAlignment="Center" Height=" 70" FontSize="20" FontFamily="Times New Roman" Width="450" Click="TransferMoney_Click">
                         Пополнить баланс
                     </Button>
 
-                    <Button Name="Exit" Content="Tooltip" Margin="0 50 0 0" Click="Exit_Click">
+                    <Button Name="Exit" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="480" Margin="10 40 10 0" Content="Tooltip"  Click="Exit_Click">
                         <Button.ToolTip>
                             Выйти из аккаунта
                         </Button.ToolTip>
@@ -111,57 +110,47 @@
             </Grid>
         </TabItem>
 
-        <!--<TabItem Name="Maps" Width="108" HorizontalAlignment="Left">
-            <TabItem.Header >
-                <Image Height="30" Source="Images/location.png"></Image>
-            </TabItem.Header>
-            <Grid>
-                
-                <TextBlock>AllStations</TextBlock>
-                <DataGrid Name="ListStations"  AutoGenerateColumns="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Width=" 0.7*" Binding="{Binding Adress}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap" Margin="120 0 100 0">
-                                    Adress
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Width=" 0.15*" Binding="{Binding NumberOfSlots}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap">
-                                    Number of available slots
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Width=" 0.15*" Binding="{Binding NumberOfBikes}">
-                            <DataGridTextColumn.Header >
-                                <TextBlock TextWrapping="Wrap">
-                                    Number of available bicycles
-                                </TextBlock>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-        </TabItem>-->
-
-        <TabItem Name="History" Width="108" HorizontalAlignment="Right">
+        <TabItem Name="History" Width="120" HorizontalAlignment="Right">
             <TabItem.Header >
                 <Image Height="30" Source="Images/bike.png"></Image>
             </TabItem.Header>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock FontSize="22" Grid.Row="0" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="0 10">История ваших поездок</TextBlock>
-                <DataGrid Grid.Row="1">
+                <TextBlock FontSize="22" Grid.Row="0" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="0 15">История ваших поездок</TextBlock>
+                <DataGrid x:Name="DataGridRides" Grid.Row="1" Margin="10" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="2.3*" Binding="{Binding BeginingOfRide}">
+                            <DataGridTextColumn.Header >
+                                <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                                    Начало поездки
+                                </TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Width="2.3*" Binding="{Binding TotalRideTime}">
+                            <DataGridTextColumn.Header >
+                                <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                                    Время поездки
+                                </TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Width="2.3*" Binding="{Binding MoneyPaid}">
+                            <DataGridTextColumn.Header >
+                                <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                                    Снято средств
+                                </TextBlock>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
+                <Button Grid.Row="2" Margin="10" Width="200" Height="40" FontSize="14">Очистить историю поездок</Button>
             </Grid>
         </TabItem>
 
-        <TabItem Name="Help" Width="110" HorizontalAlignment="Right">
+        <TabItem Name="Help" Width="120" HorizontalAlignment="Right">
             <TabItem.Header>
                 <Image Height="30" Source="Images/help.png"></Image>
             </TabItem.Header>

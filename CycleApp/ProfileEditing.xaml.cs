@@ -28,7 +28,8 @@ namespace CycleApp
             cont = context;
             InitializeComponent();
             TextBoxFullName.Text = currentUser.FullName;
-            TextBoxCardNumber.Text = currentUser.CardNumber.ToString();
+            if (currentUser.CardNumber != null)
+                TextBoxCardNumber.Text = currentUser.CardNumber.ToString();
         }
 
         private void ButtonReturn_Click(object sender, RoutedEventArgs e)

@@ -3,7 +3,7 @@ namespace Cycle.Info.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init_ten : DbMigration
+    public partial class init_twelve : DbMigration
     {
         public override void Up()
         {
@@ -57,8 +57,8 @@ namespace Cycle.Info.Migrations
                         FullName = c.String(),
                         Email = c.String(),
                         Password = c.String(),
-                        CardNumber = c.Int(nullable: false),
-                        CardPassword = c.Int(nullable: false),
+                        CardNumber = c.String(),
+                        CardPassword = c.String(),
                         Balance = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.Id);
