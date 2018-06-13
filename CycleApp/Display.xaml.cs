@@ -28,7 +28,8 @@ namespace CycleApp
             currentUser = curUser;
             cont = context;
             InitializeComponent();
-            this.ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
+            this.DataGridStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
+            this.DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id).OrderBy(r => r.BeginingOfRide).ToList();
             UserName.Text = currentUser.FullName;
             Balance.Text = currentUser.Balance.ToString();
             List<string> metroStations = new List<string>();
@@ -88,8 +89,23 @@ namespace CycleApp
             //{
             //    string metro = ComboBoxMetro.ItemsSource.ToString();
             //    List<Station> bikeStations = cont.Stations.Where(s => s.NearestMetroStation.Equals(metro)).ToList();
-            //    ListStations.ItemsSource = bikeStations;
+            //    DataGridStations.ItemsSource = bikeStations;
             //}
+        }
+
+        private void ButtonDeleteHistory_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Ride ride in cont.Rides)
+            {
+                if (ride.UserId == currentUser.Id)
+                    cont.Rides.Remove(ride);
+            }
+            cont.SaveChanges();
+        }
+
+        private void RedactorAccount_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

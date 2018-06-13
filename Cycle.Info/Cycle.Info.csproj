@@ -56,30 +56,23 @@
     <Compile Include="Classes\User.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DBRepository.cs" />
-    <Compile Include="Migrations\201806121632188_init_four.cs" />
-    <Compile Include="Migrations\201806121632188_init_four.Designer.cs">
-      <DependentUpon>201806121632188_init_four.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806121641105_init_five.cs" />
-    <Compile Include="Migrations\201806121641105_init_five.Designer.cs">
-      <DependentUpon>201806121641105_init_five.cs</DependentUpon>
+    <Compile Include="Migrations\201806130030027_init_ten.cs" />
+    <Compile Include="Migrations\201806130030027_init_ten.Designer.cs">
+      <DependentUpon>201806130030027_init_ten.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806121632188_init_four.resx">
-      <DependentUpon>201806121632188_init_four.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806121641105_init_five.resx">
-      <DependentUpon>201806121641105_init_five.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="Info\startingData.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806130030027_init_ten.resx">
+      <DependentUpon>201806130030027_init_ten.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
