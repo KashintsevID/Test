@@ -17,7 +17,7 @@ namespace Cycle.Info.Classes
         public Bicycle Bicycle { get; set; }
         public int BicycleId { get; set; }
         public DateTime BeginingOfRide { get; set; }
-        public int TotalRideTime { get; set; }
+        public string TotalRideTime { get; set; }
         public decimal MoneyPaid { get; set; }
         public bool IsRideFinished { get; set; }
     }

@@ -76,12 +76,8 @@ namespace CycleApp
 
             string NewFullName = TextBoxFullName.Text.Trim();
             string NewEmail = TextBoxEmail.Text.Trim();
-            if (IsValidEmail(NewEmail))
-            {
-
-            }
-            else
-            {
+            if (!IsValidEmail(NewEmail))
+            { 
                 MessageBox.Show(" Введите адрес своей почты правильно", "Внимание");
                 return;
             }

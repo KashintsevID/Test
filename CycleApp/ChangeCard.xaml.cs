@@ -36,24 +36,21 @@ namespace CycleApp
 
         private void ButtonChangeCard_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(NumberC.Text) || string.IsNullOrEmpty(PasswordC.Password))
+            if (NumberC.Text.Length != 16 || PasswordC.Password.Length != 4)
+                MessageBox.Show(" Не все поля заполнены полностью", "Внимание");
+            else if (NumberC.Text.All(char.IsDigit) && PasswordC.Password.All(char.IsDigit))
             {
-                MessageBox.Show("Не все поля заполнены");
-            }
-            else{
-                //currentUser.CardNumber = NumberC.Text;
-                foreach (var user in cont.Users)
-                {
-                    if (user.Email ==currentUser.Email)
-                    {
-                        user.CardNumber = NumberC.Text;
-                        
-                    }
-                }
+                currentUser.CardNumber = NumberC.Text;
+                currentUser.CardPassword = User.GetHash(PasswordC.Password);
                 cont.SaveChanges();
-                MessageBox.Show("Карта изменена");
+                MessageBox.Show(" Карта изменена", "Внимание");
                 DialogResult = true;
                 Close();
+            }
+            else
+            {
+                MessageBox.Show(" Не все поля заполнены корректно", "Внимание");
+                return;
             }
         }
     }
