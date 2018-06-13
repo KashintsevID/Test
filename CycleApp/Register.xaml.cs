@@ -43,6 +43,7 @@ namespace CycleApp
                 TextBoxEmail.Focus();
                 return;
             }
+
             if (string.IsNullOrWhiteSpace(PasswordBox.Password))
             {
                 MessageBox.Show(" Введите ваш пароль", "Внимание");
@@ -59,9 +60,31 @@ namespace CycleApp
                     return;
                 }
             }
+            
+            bool IsValidEmail(string email)
+            {
+                try
+                {
+                    var addr = new System.Net.Mail.MailAddress(email);
+                    return addr.Address == email;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
 
             string NewFullName = TextBoxFullName.Text.Trim();
             string NewEmail = TextBoxEmail.Text.Trim();
+            if (IsValidEmail(NewEmail))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show(" Введите адрес своей почты правильно", "Внимание");
+                return;
+            }
             string NewPassword = User.GetHash(PasswordBox.Password.Trim());
 
             User newUser = new User()

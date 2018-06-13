@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
-        Title="Price" Height="600" Width="450">
+        Title="Price" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>

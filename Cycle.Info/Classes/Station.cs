@@ -14,10 +14,7 @@ namespace Cycle.Info.Classes
         public string NearestMetroStation { get; set; }
         public int NumberOfSlots { get; set; }
         public int NumberOfBikes { get; set; }
-        public int NumderOfAVAILABLESlots { get; set; }
         [JsonIgnore]
         public List<Bicycle> BicyclesONStation { get; set; }
-
-
     }
 }
