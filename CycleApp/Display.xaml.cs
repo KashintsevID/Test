@@ -77,19 +77,9 @@ namespace CycleApp
         {
             IsEnabled = false;
             var transfer = new TransferMoney(cont,currentUser);
-            
             if (transfer.ShowDialog() == true || transfer.IsActive == false)
                 IsEnabled = true;
-            UpdateBalance(cont,currentUser);
-        }
-
-        private void UpdateBalance(Context cont,User currentUser)
-        {
-            foreach (var user in cont.Users)
-            {
-                if (user.Email == currentUser.Email)
-                    Balance.Text = user.Balance.ToString();
-            }
+            Balance.Text = currentUser.Balance.ToString();
         }
 
         private void RedactorAccount_Click(object sender, RoutedEventArgs e)

@@ -3,7 +3,7 @@ namespace Cycle.Info.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init_twelve : DbMigration
+    public partial class init_sixten : DbMigration
     {
         public override void Up()
         {
@@ -39,7 +39,7 @@ namespace Cycle.Info.Migrations
                         UserId = c.Int(nullable: false),
                         BicycleId = c.Int(nullable: false),
                         BeginingOfRide = c.DateTime(nullable: false),
-                        TotalRideTime = c.Int(nullable: false),
+                        TotalRideTime = c.String(),
                         MoneyPaid = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IsRideFinished = c.Boolean(nullable: false),
                     })
@@ -57,7 +57,7 @@ namespace Cycle.Info.Migrations
                         FullName = c.String(),
                         Email = c.String(),
                         Password = c.String(),
-                        CardNumber = c.String(),
+                        CardNumber = c.Int(nullable: false),
                         CardPassword = c.String(),
                         Balance = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })

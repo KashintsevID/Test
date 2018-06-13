@@ -27,19 +27,13 @@ namespace CycleApp
             cont = context;
             currentUser=curUser;
             InitializeComponent();
-            foreach (var user in cont.Users)
+            StackPanelPassword.Visibility = Visibility.Hidden;
+            if (currentUser.CardNumber != null)
+                NumberOfCard.Text = currentUser.CardNumber.ToString();
+            else
             {
-                if (user.Email == currentUser.Email)
-                {
-                    if (user.CardNumber == null)
-                    {
-                        NumberOfCard.Text = "Карта не добавлена";
-                    }
-                    else
-                    {
-                       NumberOfCard.Text = user.CardNumber;
-                    }
-                }
+                NumberOfCard.Text = "Нет карты оплаты";
+                StackPanelSum.IsEnabled = false;
             }
         }
             
@@ -51,47 +45,45 @@ namespace CycleApp
         
         private void ButtonAddMoney_Click(object sender, RoutedEventArgs e)
         {
-            if (Sum.Text == "Введите сумму")
+            if (string.IsNullOrWhiteSpace(Sum.Text) || int.Parse(Sum.Text) <= 0 || !Sum.Text.All(char.IsDigit))
             {
-                MessageBox.Show("Вы не ввели сумму");
+                MessageBox.Show(" Вы не ввели сумму корректно", "Внимание");
+                return;
             }
             else
-            {
-                foreach (var user in cont.Users)
-                {
-                    if (user.Email == currentUser.Email)
-                        user.Balance += decimal.Parse(Sum.Text);
-                }
-                cont.SaveChanges();
-                MessageBox.Show("Баланс пополнен на " + int.Parse(Sum.Text) + "рублей");
-            }
+                StackPanelPassword.Visibility = Visibility.Visible;
         }
+
         private void Update(Context cont,User currentUser)
         {
-            foreach (var user in cont.Users)
-            {
-                if (user.Email == currentUser.Email)
-                {
-                    if (user.CardNumber == null)
-                    {
-                        NumberOfCard.Text = "Карта не добавлена";
-                    }
-                    else
-                    {
-                        NumberOfCard.Text = user.CardNumber;
-                    }
-                }
-            }
+            if (currentUser.CardNumber == null)
+                NumberOfCard.Text = "Карта не добавлена";
+            else
+                NumberOfCard.Text = currentUser.CardNumber.ToString();
         }
 
         private void ButtonChangeCard_Click(object sender, RoutedEventArgs e)
         {
-          //  this.Visibility = Visibility.Hidden;
             var changeCardWindow = new ChangeCard(cont,currentUser);
             changeCardWindow.ShowDialog();
+            StackPanelSum.IsEnabled = true;
             Update(cont,currentUser);
-           // this.Visibility = Visibility.Visible;
-           
+        }
+
+        private void ButtonConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(Password.Password) || currentUser.CardPassword != User.GetHash(Password.Password))
+            { 
+                MessageBox.Show(" Введите пароль от карты корректно", "Внимание");
+                return;
+            }
+            else
+            {
+                currentUser.Balance += decimal.Parse(Sum.Text);
+                cont.SaveChanges();
+                MessageBox.Show("Баланс пополнен на " + int.Parse(Sum.Text) + " рублей");
+                this.Close();
+            }
         }
     }
 }

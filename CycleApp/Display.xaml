@@ -59,37 +59,37 @@
             </TabItem.Header>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
-                    <RowDefinition Height="90"/>
                     <RowDefinition Height="Auto"/>
-
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.4*"/>
-                    <ColumnDefinition Width="0.6*"/>
-                   
-                </Grid.ColumnDefinitions>
 
-                <TextBlock TextWrapping="Wrap" Width="250" Height="50 " Text="Имя пользователя" Name="UserName" VerticalAlignment="Bottom"  Grid.Row="0" Grid.Column="1" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="10"></TextBlock>
-                <Label Margin="10" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
-                <TextBlock Name="Balance" TextWrapping="Wrap" FontSize="13" Grid.Column="1" Grid.Row="1" Height="20" Width="100" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                    <Button x:Name="RedactorAccount" Margin="40" Click="RedactorAccount_Click" Content="Tooltip">
+                        <Button.ToolTip>
+                            Изменить личные данные
+                        </Button.ToolTip>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Ellipse/>
+                                    <Image Width="70" Source="Images/Account.png"/>
+                                    <Image Source="Images/redactor.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10 10 10 10"></Image>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock TextWrapping="Wrap" Width="Auto" Height="Auto" Text="Имя пользователя" Name="UserName" VerticalAlignment="Bottom" FontSize="18" FontFamily=" Times New Roman" HorizontalAlignment="Center" Margin="10"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Margin="10" VerticalAlignment="Top" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Center">Баланс:</Label>
+                            <TextBlock Name="Balance" TextWrapping="Wrap" TextAlignment="Right" FontSize="13" Height="20" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock VerticalAlignment="Center" Margin="10">руб.</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
 
-                <Button x:Name="RedactorAccount" Click="RedactorAccount_Click" Content="Tooltip" Margin="40,40,8,40" Grid.Column="0" Grid.RowSpan="2">
-                    <Button.ToolTip>
-                        Изменить личные данные
-                    </Button.ToolTip>
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Grid>
-                                <Ellipse/>
-                                <Image Width="70" Source="Images/Account.png"/>
-                                <Image Source="Images/redactor.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10 10 10 10"></Image>
-                            </Grid>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="0,0,0.115,0">
-                    <Button Name="TransferMoney" HorizontalAlignment="Center" Height=" 70" FontSize="20" FontFamily="Times New Roman" Width="450" Click="TransferMoney_Click">
+                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0.115,0">
+                    <Button Name="TransferMoney" HorizontalAlignment="Center" Height="60" FontSize="20" FontFamily="Times New Roman" Width="350" Click="TransferMoney_Click">
                         Пополнить баланс
                     </Button>
 

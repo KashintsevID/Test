@@ -22,8 +22,8 @@
         </Button>
         <Label Margin="0 20 0 0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Width="200" Height=" 40" FontSize="20"  >Номер карты</Label>
         <Label Margin="0 20 0 0" VerticalAlignment="Top"  Grid.Row="2" Grid.Column="0" Width="200" Height=" 40" FontSize="20">Пароль от карты</Label>
-        <TextBox Name="NumberC" FontSize="15" Margin="0 20 0 0" VerticalAlignment="Top"  Grid.Row="1" Grid.Column="1" Width="200" Height=" 40"></TextBox>
-        <PasswordBox   FontSize="35" VerticalContentAlignment="Center" Name="PasswordC" Margin="0 20 0 0" VerticalAlignment="Top"   Grid.Row="2" Grid.Column="1" Width="200" Height=" 40">
+        <TextBox MaxLength="16" Name="NumberC" FontSize="15" Margin="0 20 0 0" VerticalAlignment="Top"  Grid.Row="1" Grid.Column="1" Width="200" Height=" 40"></TextBox>
+        <PasswordBox MaxLength="4" FontSize="35" VerticalContentAlignment="Center" Name="PasswordC" Margin="0 20 0 0" VerticalAlignment="Top"   Grid.Row="2" Grid.Column="1" Width="200" Height=" 40">
       </PasswordBox>
         <Button Grid.Row="2" Grid.Column=" 1" VerticalAlignment="Bottom" Margin="40" Width="100" Height="40" Click="ButtonChangeCard_Click"  >Изменить карту</Button>
     </Grid>

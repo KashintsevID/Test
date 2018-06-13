@@ -56,13 +56,13 @@
     <Compile Include="Classes\User.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DBRepository.cs" />
-    <Compile Include="Migrations\201806131113145_init_twelve.cs" />
-    <Compile Include="Migrations\201806131113145_init_twelve.Designer.cs">
-      <DependentUpon>201806131113145_init_twelve.cs</DependentUpon>
+    <Compile Include="Migrations\201806131657587_init_sixten.cs" />
+    <Compile Include="Migrations\201806131657587_init_sixten.Designer.cs">
+      <DependentUpon>201806131657587_init_sixten.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806131243290_ini_thirteen.cs" />
-    <Compile Include="Migrations\201806131243290_ini_thirteen.Designer.cs">
-      <DependentUpon>201806131243290_ini_thirteen.cs</DependentUpon>
+    <Compile Include="Migrations\201806131703025_init_seventeen.cs" />
+    <Compile Include="Migrations\201806131703025_init_seventeen.Designer.cs">
+      <DependentUpon>201806131703025_init_seventeen.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806131113145_init_twelve.resx">
-      <DependentUpon>201806131113145_init_twelve.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806131657587_init_sixten.resx">
+      <DependentUpon>201806131657587_init_sixten.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806131243290_ini_thirteen.resx">
-      <DependentUpon>201806131243290_ini_thirteen.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806131703025_init_seventeen.resx">
+      <DependentUpon>201806131703025_init_seventeen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
