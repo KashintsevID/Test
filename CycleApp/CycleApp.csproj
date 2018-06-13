@@ -67,6 +67,9 @@
     <Compile Include="About CYCLE.xaml.cs">
       <DependentUpon>About CYCLE.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChangeCard.xaml.cs">
+      <DependentUpon>ChangeCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Display.xaml.cs">
       <DependentUpon>Display.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
       <DependentUpon>TransferMoney.xaml</DependentUpon>
     </Compile>
     <Page Include="About CYCLE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

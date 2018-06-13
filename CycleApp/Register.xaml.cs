@@ -69,8 +69,8 @@ namespace CycleApp
                 FullName = NewFullName,
                 Email = NewEmail,
                 Password = NewPassword,
-                CardNumber = 0,
-                CardPassword = 0,
+                CardNumber = null,
+                CardPassword = null,
                 Balance = 0 };
             cont.Users.Add(newUser);
             cont.SaveChanges();

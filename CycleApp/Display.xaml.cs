@@ -30,7 +30,14 @@ namespace CycleApp
             InitializeComponent();
             this.ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
             UserName.Text = currentUser.FullName;
-            Balance.Text = currentUser.Balance.ToString();
+            foreach (var user in cont.Users)
+            {
+                if (user.Email==currentUser.Email)
+                {
+                    Balance.Text = user.Balance.ToString();
+                }
+            }
+           
             List<string> metroStations = new List<string>();
             foreach (Station station in cont.Stations)
             {
@@ -75,10 +82,22 @@ namespace CycleApp
         private void TransferMoney_Click(object sender, RoutedEventArgs e)
         {
             IsEnabled = false;
-            var transfer = new TransferMoney(currentUser);
+            var transfer = new TransferMoney(cont,currentUser);
+            
             if (transfer.ShowDialog() == true || transfer.IsActive == false)
             {
                 IsEnabled = true;
+            }
+            UpdateBalance(cont,currentUser);
+        }
+        private void UpdateBalance(Context cont,User currentUser)
+        {
+            foreach (var user in cont.Users)
+            {
+                if (user.Email == currentUser.Email)
+                {
+                    Balance.Text = user.Balance.ToString();
+                }
             }
         }
 
@@ -91,5 +110,7 @@ namespace CycleApp
             //    ListStations.ItemsSource = bikeStations;
             //}
         }
+
+        
     }
 }

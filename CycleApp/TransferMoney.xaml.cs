@@ -20,16 +20,86 @@ namespace CycleApp
     /// </summary>
     public partial class TransferMoney : Window
     {
+        private Context cont;
         private User currentUser;
-        public TransferMoney(User curUser)
+        public TransferMoney(Context context, User curUser)
         {
-            currentUser = curUser;
+            cont = context;
+            currentUser=curUser;
             InitializeComponent();
-        }
+            foreach (var user in cont.Users)
+            {
+                if (user.Email == currentUser.Email)
+                {
+                    if (user.CardNumber == null)
+                    {
+                        NumberOfCard.Text = "Карта не добавлена";
+                    }
+                    else
+                    {
+                       NumberOfCard.Text = user.CardNumber;
+                    }
+                }
+            }
+
+            }
+            
 
         private void ButtonReturn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            DialogResult  = true;
+            Close();
+        }
+
+        
+
+        private void ButtonAddMoney_Click(object sender, RoutedEventArgs e)
+        {
+            if (Sum.Text == "Введите сумму")
+            {
+                MessageBox.Show("Вы не ввели сумму");
+            }
+            else
+            {
+                foreach (var user in cont.Users)
+                {
+                    if (user.Email == currentUser.Email)
+                    {
+                        user.Balance += decimal.Parse(Sum.Text);
+
+                    }
+                }
+                cont.SaveChanges();
+                MessageBox.Show("Баланс пополнен на " + int.Parse(Sum.Text) + "рублей");
+            }
+        }
+        private void Update(Context cont,User currentUser)
+        {
+            foreach (var user in cont.Users)
+            {
+                if (user.Email == currentUser.Email)
+                {
+                    if (user.CardNumber == null)
+                    {
+                        NumberOfCard.Text = "Карта не добавлена";
+                    }
+                    else
+                    {
+                        NumberOfCard.Text = user.CardNumber;
+                    }
+                }
+            }
+        }
+
+        private void ButtonChangeCard_Click(object sender, RoutedEventArgs e)
+        {
+          //  this.Visibility = Visibility.Hidden;
+            var changeCardWindow = new ChangeCard(cont,currentUser);
+            changeCardWindow.ShowDialog();
+            Update(cont,currentUser);
+           // this.Visibility = Visibility.Visible;
+
+
         }
     }
 }

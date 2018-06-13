@@ -64,6 +64,14 @@
     <Compile Include="Migrations\201806121641105_init_five.Designer.cs">
       <DependentUpon>201806121641105_init_five.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806130153030_Datbase.cs" />
+    <Compile Include="Migrations\201806130153030_Datbase.Designer.cs">
+      <DependentUpon>201806130153030_Datbase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806130935109_DB.cs" />
+    <Compile Include="Migrations\201806130935109_DB.Designer.cs">
+      <DependentUpon>201806130935109_DB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -74,6 +82,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806121641105_init_five.resx">
       <DependentUpon>201806121641105_init_five.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806130153030_Datbase.resx">
+      <DependentUpon>201806130153030_Datbase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806130935109_DB.resx">
+      <DependentUpon>201806130935109_DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

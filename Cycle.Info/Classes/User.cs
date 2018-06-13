@@ -15,8 +15,8 @@ namespace Cycle.Info
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public int CardNumber { get; set; }
-        public int CardPassword { get; set; }
+        public string   CardNumber { get; set; }
+        public string   CardPassword { get; set; }
         public decimal Balance { get; set; }
 
         //хэширование пароля
