@@ -20,10 +20,10 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Name="ReturnBike" Background="Transparent"  Grid.Column="0" Width=" 280" Margin="40 0 0 0" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontSize="26" FontWeight="DemiBold" Foreground="Red" >
+        <TextBox Name="ReturnBike" Background="Transparent"  Grid.Column="0" Width=" 280"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin=" 40 0 0 0 " Grid.ColumnSpan="2" FontSize="20" FontWeight="DemiBold" Foreground="Red" >
             Верните велоспед на стоянку и оплатите штраф 3 000руб!</TextBox>
-        <TextBox Name="ReturnBikeSoon" Grid.Column="0" Width=" 300" Margin="40 0 0 0" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontSize="26" FontWeight="DemiBold" Foreground="Red" >Верните велосипед на стоянку!Или Вам будет выписан штраф через</TextBox>
-        <TextBox Name="TimeToDeadLine" FontSize="20" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Foreground="Red" ></TextBox>
+        <TextBlock Name="ReturnBikeSoon" Grid.Column="0" Width=" 300"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin=" 40 0 0 0 " FontSize="20" FontWeight="DemiBold" Foreground="Red" >Верните велосипед на стоянку!Или Вам будет выписан штраф через</TextBlock>
+        <TextBlock Name="TimeToDeadLine" FontSize="20" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Foreground="Red" ></TextBlock>
         <TextBlock Margin="30 15" HorizontalAlignment="Left" FontSize="30" FontWeight="DemiBold">CYCLE</TextBlock>
         <Button Name="ButtonUpdate" Height="40" Width="40" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="15" Click="ButtonUpdate_Click">
             <Button.Template>
