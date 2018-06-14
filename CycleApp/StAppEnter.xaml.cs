@@ -60,7 +60,7 @@ namespace CycleApp
                     {
                         if (ride.UserId == currentUser.Id && ride.IsRideFinished == false)
                         {
-                            if (currentStation.NumberOfBikes==currentStation.NumberOfSlots)
+                            if (currentStation.NumberOfSlots==0)
                             {
                                 MessageBox.Show("Вы не можете поставить велосипед на эту станцию. Нет свободных слотов");
                                 return;
