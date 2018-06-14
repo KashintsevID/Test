@@ -49,7 +49,7 @@ namespace CycleApp
             {
                 if (ride.UserId == currentUser.Id && ride.IsRideFinished == false)
                 {
-                    ActiveRide.Text = $"Текущая поездка:\n Велосипед - {ride.BicycleId}\n Начало поездки - {ride.BeginingOfRide}";
+                    ActiveRide.Text = $" Текущая поездка:\n Велосипед - {ride.BicycleId}\n Начало поездки - {ride.BeginingOfRide}";
                     return;
                 }
             }

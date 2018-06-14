@@ -25,10 +25,6 @@ namespace CycleApp
         private User currentUser;
         private Station currentStation;
         private Ride currentRide;
-        int currentSlot;
-        int days;
-        int hours;
-        int minutes;
         public StAppGiveBack(Context context, User curUser, Station curStation,Ride curRide)
         {
             currentRide = curRide;
@@ -39,7 +35,6 @@ namespace CycleApp
             HiddenButton.Visibility = Visibility.Hidden;
             HiddenLabel.Visibility = Visibility.Hidden;
             NumberOfSlot.Visibility = Visibility.Hidden;
-
         }
 
         private void ButtonBackBike_Click(object sender, RoutedEventArgs e)
