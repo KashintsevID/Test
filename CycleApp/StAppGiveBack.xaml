@@ -21,25 +21,27 @@
         <StackPanel> 
             
         </StackPanel>
-        <TextBlock Name="FullName" FontSize="27" FontFamily="Times New Roman" TextWrapping="Wrap" Height="Auto" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" Width="Auto">Olga Starchikova</TextBlock>
+        <TextBlock Name="FullName" FontSize="27" FontFamily="Times New Roman" TextWrapping="Wrap" Height="Auto" HorizontalAlignment="Center" Margin="20" VerticalAlignment="Top" Width="Auto">Olga Starchikova</TextBlock>
         <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom"  HorizontalAlignment="Center">
             <Label Margin="10" Width="Auto"  FontSize="30" FontFamily="Times New Roman">Баланс:</Label>
-            <TextBlock Name="Balance" TextWrapping="Wrap" FontSize="20"   Height="40" Width="200"></TextBlock>
-         </StackPanel>
-        <StackPanel  ></StackPanel>
+            <TextBlock Name="Balance" TextWrapping="Wrap" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto"></TextBlock>
+            <TextBlock FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15">руб.</TextBlock>
+        </StackPanel>
         <Button Height=" 50" FontSize="20" Width="250" Grid.Row="1" Margin="10" VerticalAlignment="Bottom" Click="ButtonBackBike_Click">Вернуть велосипед</Button>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Height="70" VerticalAlignment="Top">
-            <TextBlock FontSize="22" Margin=" 10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="214">Ваша поездка длится</TextBlock>
-            <TextBlock x:Name="ActiveRide" Width="Auto" Margin=" 20" FontSize="20"  ></TextBlock>
+            <TextBlock FontSize="22" Margin=" 10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="230">Ваша поездка длилась</TextBlock>
+            <TextBlock x:Name="ActiveRide" Width="Auto" Margin=" 20" FontSize="20"></TextBlock>
         </StackPanel>
-        <StackPanel Name="HiddenLabel" Grid.Row="3" Margin="10">
-            <Label   FontSize="25"  FontFamily="Times New Roman" >Поставьте велосипед в слот номер</Label>
-            <TextBlock Name="NumberOfSlot" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="40 15"  Height="40" Width=" 40" ></TextBlock>
+        <StackPanel Name="HiddenLabel" Grid.Row="3" Margin="10" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label  FontSize="25"  FontFamily="Times New Roman" Height="Auto" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">Поставьте велосипед в слот номер</Label>
+                <TextBlock Name="NumberOfSlot" HorizontalAlignment="Right" Margin="40 15" VerticalAlignment="Center" Height="Auto" Width="Auto" FontSize="25" FontWeight="Medium"></TextBlock>
+            </StackPanel>
+            <Button Grid.Row="3" Name="HiddenButton" VerticalAlignment="Center" Margin="20 40 20 20"  Width="270" Height="80" Click="HiddenButton_Click">
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Поставить велосипед и завершить обслуживание" FontSize="22"  FontFamily="Times New Roman"  >
+                </TextBlock>
+            </Button>
         </StackPanel>
-        <Button Grid.Row="3" Name="HiddenButton" VerticalAlignment="Center" Margin="20 40 20 20"  Width="270" Height="80" Click="HiddenButton_Click">
-         <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Поставить велосипед и завершить обслуживание" FontSize="22"  FontFamily="Times New Roman"  >
-         </TextBlock>
-        </Button>
 
     </Grid>
 </Window>

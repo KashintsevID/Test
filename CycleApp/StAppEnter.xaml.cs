@@ -29,7 +29,7 @@ namespace CycleApp
             TextBoxEmail.Focus();
             foreach (var station in context.Stations)
             {
-                if (station.Adress=="ул. Крымский Вал, д.3")
+                if (station.Adress== "Клементовский пер., д.23, стр.1")
                     currentStation = station;
             }
             StationName.Text = currentStation.Adress.ToString();
@@ -62,7 +62,7 @@ namespace CycleApp
                         {
                             if (currentStation.NumberOfSlots==0)
                             {
-                                MessageBox.Show("Вы не можете поставить велосипед на эту станцию. Нет свободных слотов");
+                                MessageBox.Show(" Вы не можете поставить велосипед на эту станцию.\n Нет свободных слотов","Нет мест");
                                 return;
                             }
                             var currentRide = ride;

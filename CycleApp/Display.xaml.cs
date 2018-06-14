@@ -26,12 +26,13 @@ namespace CycleApp
         private User currentUser;
         public Display(Context context, User curUser)
         {
-            ReturnBike.Visibility = Visibility.Hidden;
-            TimeToDeadLine.Visibility = Visibility.Hidden;
-            ReturnBikeSoon.Visibility = Visibility.Hidden;
+            
             currentUser = curUser;
             cont = context;
             InitializeComponent();
+            ReturnBike.Visibility = Visibility.Hidden;
+            TimeToDeadLine.Visibility = Visibility.Hidden;
+            ReturnBikeSoon.Visibility = Visibility.Hidden;
             CheckingActiveRide();
             this.ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
             UserName.Text = currentUser.FullName;
@@ -175,9 +176,8 @@ namespace CycleApp
                 if (ride.UserId == currentUser.Id && ride.IsRideFinished == true)
                     cont.Rides.Remove(ride);
             }
+            DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id && r.IsRideFinished == true).ToList();
             cont.SaveChanges();
         }
-
-       
     }
 }

@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Display"  Height="570"  Width="500" >
+        Title="Display" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -94,7 +94,7 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20 20 20 0">
                         <Button x:Name="RedactorAccount" Margin="30" Click="RedactorAccount_Click" Content="Tooltip">
                             <Button.ToolTip>
                                 Изменить личные данные
@@ -134,7 +134,7 @@
                                 <ControlTemplate>
                                     <Grid>
                                         <Image Source="Images/exit.png" HorizontalAlignment="Left" Height="30"></Image>
-                                        <TextBlock FontSize="22" Width=" 70" Margin="50" HorizontalAlignment="Left" FontFamily="Times New Roman">Выйти</TextBlock>
+                                        <TextBlock FontSize="22" Width=" 70" Margin="40 10" HorizontalAlignment="Left" FontFamily="Times New Roman">Выйти</TextBlock>
                                     </Grid>
                                 </ControlTemplate>
                             </Button.Template>

@@ -35,18 +35,19 @@ namespace CycleApp
             currentUser = curUser;
             currentStation = curStation;
             InitializeComponent();
+            Balance.Text = currentUser.Balance.ToString();
             HiddenButton.Visibility = Visibility.Hidden;
             HiddenLabel.Visibility = Visibility.Hidden;
             Surcharge.Visibility = Visibility.Hidden;
             FullName.Text = currentUser.FullName;
-            if (currentRide.IsRideFinished==false)
-                Surcharge.Visibility = Visibility.Visible;
             TimeSpan totalTime = DateTime.Now - currentRide.BeginingOfRide;
             days = totalTime.Days;
             hours = totalTime.Hours;
             minutes = totalTime.Minutes;
-            ActiveRide.Text =  (days + "дн " + hours + "ч " + minutes + "мин");
+            ActiveRide.Text =  (days + " дн. " + hours + " ч. " + minutes + " мин.");
             totalRTime =  ActiveRide.Text;
+            if (currentRide.IsRideFinished == false && days >=2)
+                Surcharge.Visibility = Visibility.Visible;
         }
 
         private void ButtonBackBike_Click(object sender, RoutedEventArgs e)
@@ -56,15 +57,20 @@ namespace CycleApp
                 if (b.StationId==currentStation.Id)
                     currentStation.BicyclesONStation.Add(b);
             }
-            currentStation.BicyclesONStation.OrderBy(b => b.CurrentSlot);
-            for (int i = 0; i < currentStation.NumberOfSlots+currentStation.NumberOfBikes; i++)
+            if (currentStation.NumberOfBikes != 0)
             {
-                if (currentStation.BicyclesONStation.All(b=>b.CurrentSlot!=i))
+                currentStation.BicyclesONStation.OrderBy(b => b.CurrentSlot);
+                for (int i = 1; i <= currentStation.NumberOfSlots + currentStation.NumberOfBikes; i++)
                 {
-                    NumberOfSlot.Text = i.ToString();
-                    break ;
+                    if (currentStation.BicyclesONStation.All(b => b.CurrentSlot != i))
+                    {
+                        NumberOfSlot.Text = i.ToString();
+                        break;
+                    }
                 }
             }
+            else
+                NumberOfSlot.Text = "1";
             HiddenButton.Visibility = Visibility.Visible;
             HiddenLabel.Visibility = Visibility.Visible;
            
@@ -75,7 +81,7 @@ namespace CycleApp
         private void HiddenButton_Click(object sender, RoutedEventArgs e)
         {
             currentRide.Bicycle.CurrentSlot= int.Parse(NumberOfSlot.Text);
-            currentRide.MoneyPaid = 2 * (days * 1440 + hours * 60 + minutes);
+            currentRide.MoneyPaid = 60 + 2 * (days * 1440 + hours * 60 + minutes);
             currentRide.TotalRideTime = totalRTime;
             currentRide.IsRideFinished = true;
             currentRide.Bicycle.StationId = currentStation.Id;
@@ -85,13 +91,8 @@ namespace CycleApp
             decimal newBalance = currentUser.Balance - currentRide.MoneyPaid;
             if (days>=2)
                 newBalance -=3000;
-            if (newBalance >= 0)
-                currentUser.Balance = newBalance ;
-            else
-            {
-                currentUser.Balance = newBalance;
-                MessageBox.Show("На вашем счете недостаточно средств, пополните баланс через мобильное приложение.Вы не сможете совершить следующую поездку, пока Ваш баланс отрицателен.");
-            }
+            currentUser.Balance = newBalance;
+            MessageBox.Show(" Возврат совершён успешно!");
             cont.SaveChanges();
             var stAppEnter = new StAppEnter();
             stAppEnter.Show();
