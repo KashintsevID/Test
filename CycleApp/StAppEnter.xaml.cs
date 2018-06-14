@@ -60,7 +60,13 @@ namespace CycleApp
                     {
                         if (ride.UserId == currentUser.Id && ride.IsRideFinished == false)
                         {
-                            var stAppLeaveBike = new StAppGiveBack(context, currentUser, currentStation);
+                            if (currentStation.NumberOfBikes==currentStation.NumberOfSlots)
+                            {
+                                MessageBox.Show("Вы не можете поставить велосипед на эту станцию. Нет свободных слотов");
+                                return;
+                            }
+                            var currentRide = ride;
+                            var stAppLeaveBike = new StAppGiveBack(context, currentUser, currentStation,currentRide);
                             stAppLeaveBike.Show();
                             this.Close();
                             return;
