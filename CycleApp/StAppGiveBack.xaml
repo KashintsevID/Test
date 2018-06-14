@@ -5,21 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
-        Title="StAppGiveBack" MaxHeight="570" MinHeight="570"  MinWidth="500" MaxWidth="500"  >
+        Title="StAppGiveBack" Height="570" Width="500"  >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.4*"/>
-            <RowDefinition Height=" 0.6*"/>
+            <RowDefinition Height=" 0.18*"/>
+            <RowDefinition Height=" 0.32*"/>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.35*"/>
+
         </Grid.RowDefinitions>
-        <TextBox Name="Surcharge" Foreground="Red" FontFamily="Times New Roman" FontSize="27" HorizontalAlignment="Center" VerticalAlignment="Bottom" >Вам выписан штраф 3000 рублей!</TextBox>
-        <TextBox Name="Balance" TextWrapping="Wrap" FontSize="20"   Height="40" Width="200" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
-        <Label Margin="10" VerticalAlignment="Top"   FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
-        <Button Height=" 50" FontSize="20" Width="250" Click="ButtonBackBike_Click">Вернуть велосипед</Button>
-        <TextBox Name="NumberOfSlot" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="40 15" Grid.Row="1" Height="40" Width=" 40" ></TextBox>
-        <Label Name="HiddenLabel" Grid.Row="1" FontSize="25" Margin=" 10" FontFamily="Times New Roman" >Поставьте велосипед в слот номер   </Label>
-        <Button Name="HiddenButton" Grid.Row="1" Width="300" Height="100" Click="HiddenButton_Click">
-            <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Поставить велосипед и завершить обслуживание" FontSize="22"  FontFamily="Times New Roman"  >
-                  </TextBlock> </Button>
+        <StackPanel Grid.Row="2" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" >
+            <TextBlock  Name="Surcharge" Foreground="Red" FontFamily="Times New Roman" FontSize="27" HorizontalAlignment="Center" VerticalAlignment="Bottom" >Вам выписан штраф 3000 рублей!</TextBlock>
+            <TextBlock Margin="5" Name="Contsct" FontFamily="Times New Roman" FontSize="20" VerticalAlignment="Bottom" Foreground="Red" >Телефон контактной службы:8(908)-654-87-34</TextBlock>
+        </StackPanel>
+        <StackPanel> 
+            
+        </StackPanel>
+        <TextBlock Name="FullName" FontSize="27" FontFamily="Times New Roman" TextWrapping="Wrap" Height="Auto" HorizontalAlignment="Center" Margin="20" VerticalAlignment="Top" Width="Auto">Olga Starchikova</TextBlock>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom"  HorizontalAlignment="Center">
+            <Label Margin="10" Width="Auto"  FontSize="30" FontFamily="Times New Roman">Баланс:</Label>
+            <TextBlock Name="Balance" TextWrapping="Wrap" FontSize="20"   Height="40" Width="200"></TextBlock>
+         </StackPanel>
+        <StackPanel  ></StackPanel>
+        <Button Height=" 50" FontSize="20" Width="250" Grid.Row="1" Margin="10" VerticalAlignment="Bottom" Click="ButtonBackBike_Click">Вернуть велосипед</Button>
+        <StackPanel Grid.Row="3">
+            <Label Name="HiddenLabel"  FontSize="25" Margin=" 10" FontFamily="Times New Roman" >Поставьте велосипед в слот номер</Label>
+            <TextBlock Name="NumberOfSlot" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="40 15"  Height="40" Width=" 40" ></TextBlock>
+        </StackPanel>
+        <Button Grid.Row="3" Name="HiddenButton" VerticalAlignment="Bottom" Margin="20"  Width="300" Height="100" Click="HiddenButton_Click">
+         <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Поставить велосипед и завершить обслуживание" FontSize="22"  FontFamily="Times New Roman"  >
+         </TextBlock>
+        </Button>
 
     </Grid>
 </Window>

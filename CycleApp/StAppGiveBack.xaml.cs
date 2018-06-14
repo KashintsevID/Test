@@ -38,6 +38,7 @@ namespace CycleApp
             HiddenLabel.Visibility = Visibility.Hidden;
             NumberOfSlot.Visibility = Visibility.Hidden;
             Surcharge.Visibility = Visibility.Hidden;
+            FullName.Text = currentUser.FullName;
             if (currentRide.IsRideFinished==false)
             {
                 Surcharge.Visibility = Visibility.Visible;
