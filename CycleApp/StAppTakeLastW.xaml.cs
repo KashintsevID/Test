@@ -24,18 +24,22 @@ namespace CycleApp
         private Context context;
         private User currentUser;
         private Bicycle bicycle;
-        public StAppTakeLastW(Context cont, User curUser, Bicycle bike)
+        private Station currentStation;
+        public StAppTakeLastW(Context cont, User curUser, Station curStation, Bicycle bike)
         {
             context = cont;
             bicycle = bike;
             currentUser = curUser;
+            currentStation = curStation;
             InitializeComponent();
             NumserOsSlot.Text = bicycle.CurrentSlot.ToString();
         }
 
         private void ButtonEnd_Click(object sender, RoutedEventArgs e)
         {
-            bicycle.StationId = 0;
+            currentStation.NumberOfBikes -= 1;
+            currentStation.NumberOfSlots += 1;
+            bicycle.StationId = null;
             context.Rides.Add(new Ride
             {
                 UserId = currentUser.Id,

@@ -38,7 +38,11 @@ namespace CycleApp
 
         private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
         {
-            Balance.Text = currentUser.Balance.ToString();
+            foreach (User user in cont.Users)
+            {
+                if (user.Id == currentUser.Id)
+                    Balance.Text = user.Balance.ToString();
+            }
         }
         
         private void Exit_Click_1(object sender, RoutedEventArgs e)
@@ -63,7 +67,7 @@ namespace CycleApp
             else
             {
                 Bicycle selectedBike = DataGridBikes.SelectedItem as Bicycle;
-                var lastWarning = new StAppTakeLastW(cont, currentUser, selectedBike);
+                var lastWarning = new StAppTakeLastW(cont, currentUser, currentStation, selectedBike);
                 IsEnabled = false;
                 if (lastWarning.ShowDialog() == true || lastWarning.IsActive == false)
                     Close();
