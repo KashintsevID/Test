@@ -29,6 +29,7 @@ namespace CycleApp
             currentStation = curStation;
             currentUser = curUser;
             cont = context;
+
             InitializeComponent();
             UserName.Text = currentUser.FullName;
             Balance.Text = currentUser.Balance.ToString();

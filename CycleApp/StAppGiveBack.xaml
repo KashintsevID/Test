@@ -5,11 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CycleApp"
         mc:Ignorable="d"
-        Title="StAppGiveBack" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
+        Title="StAppGiveBack" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500" >
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height=" 0.6*"/>
+        </Grid.RowDefinitions>
         <TextBox Name="Balance" TextWrapping="Wrap" FontSize="20"   Height="40" Width="200" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
         <Label Margin="10" VerticalAlignment="Top"   FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
-        <Button Height=" 50" FontSize="20" Width="250" Click="ButtonBack_Click">Вернуть велосипед</Button>
+        <Button Height=" 50" FontSize="20" Width="250" Click="ButtonBackBike_Click">Вернуть велосипед</Button>
+        <TextBox Name="NumberOfSlot" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="40 15" Grid.Row="1" Height="40" Width=" 40" ></TextBox>
+        <Label Name="HiddenLabel" Grid.Row="1" FontSize="25" Margin=" 10" FontFamily="Times New Roman" >Поставьте велосипед в слот номер   </Label>
+        <Button Name="HiddenButton" Grid.Row="1" Width="300" Height="100" Click="HiddenButton_Click">
+            <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Поставить велосипед и завершить обслуживание" FontSize="22"  FontFamily="Times New Roman"  >
+                  </TextBlock> </Button>
 
     </Grid>
 </Window>
