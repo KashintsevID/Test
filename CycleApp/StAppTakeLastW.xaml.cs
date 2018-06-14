@@ -46,7 +46,7 @@ namespace CycleApp
                 IsRideFinished = false
             });
             currentUser.Balance -= 60;
-            //context.SaveChanges();
+            context.SaveChanges();
             MessageBox.Show(" Операция успешно проведена");
             var stAppEnter = new StAppEnter();
             stAppEnter.Show();

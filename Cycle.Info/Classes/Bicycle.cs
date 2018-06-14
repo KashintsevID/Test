@@ -12,7 +12,7 @@ namespace Cycle.Info.Classes
         public int Id { get; set; }
         [JsonIgnore]
         public Station Station { get; set; }
-        public int StationId { get; set; }
+        public int? StationId { get; set; }
         public int CurrentSlot { get; set; }
     }
 }
