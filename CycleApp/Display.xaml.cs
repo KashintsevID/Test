@@ -55,12 +55,12 @@ namespace CycleApp
                     int minutes = totalTime.Minutes;
                     if (days>=2)
                     {
-                        MessageBox.Show("Верните велосипед на стоянку и оплатите штраф в ближайщем банкомате!");
+                        MessageBox.Show("Верните велосипед на стоянку и оплатите штраф в ближайшем банкомате!");
                         ReturnBike.Visibility = Visibility.Visible;
                     }
                      if(days==1&&hours>=21)
                     {
-                        MessageBox.Show("Верните велосипед на стоянку!Осталось меньше 3х часов до того, как Вам будет выписан штраф");
+                        MessageBox.Show("Верните велосипед на стоянку! Осталось меньше 3х часов до того, как Вам будет выписан штраф");
                         ReturnBikeSoon.Visibility = Visibility.Visible;
                         TimeToDeadLine.Visibility = Visibility.Visible;
                         int deadlineHours = 24 - hours ;
@@ -70,7 +70,6 @@ namespace CycleApp
 
                 }
             }
-
         }
 
         private void CheckingActiveRide()
@@ -155,7 +154,15 @@ namespace CycleApp
 
         private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
         {
-            Balance.Text = currentUser.Balance.ToString();
+            cont = new Context();
+            foreach (User user in cont.Users)
+            {
+                if (user.Id == currentUser.Id)
+                {
+                    Balance.Text = user.Balance.ToString();
+                    return;
+                }
+            }
             DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id && r.IsRideFinished == true).ToList();
             FilteringStations();
             CheckingActiveRide();

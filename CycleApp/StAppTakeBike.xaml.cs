@@ -41,7 +41,10 @@ namespace CycleApp
             foreach (User user in cont.Users)
             {
                 if (user.Id == currentUser.Id)
+                {
                     Balance.Text = user.Balance.ToString();
+                    return;
+                }
             }
         }
         
