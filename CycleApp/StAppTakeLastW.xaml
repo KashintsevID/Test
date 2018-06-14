@@ -12,12 +12,15 @@
             <RowDefinition Height="0.4*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        <Button Height="40"  HorizontalAlignment="Left" Margin="7"  VerticalAlignment="Top"  ToolTip="Вернутся к выбору другого велосипеда" >
-            <Image Height="38" Source="Images/arrow-back-outline-128.png"></Image>
-        </Button>
-        <TextBlock FontSize="30" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Times New Roman">Bозьмите выбранный велосипед из слота номер</TextBlock>
-        <TextBox Name="NumserOsSlot" Grid.Row="1" Height="20" Width="30"  ></TextBox>
-        <Button FontSize=" 20" Grid.Row="2" VerticalAlignment="Top"   HorizontalAlignment="Center"  FontFamily="Times New Roman" Height="60" Width=" 250" Click="ButtonEnd_Click">
-            <TextBlock TextWrapping="Wrap">Взять велосипед и завершить обслуживание</TextBlock> </Button>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Times New Roman">Bозьмите выбранный велосипед из слота номер</TextBlock>
+            <TextBlock Name="NumserOsSlot" Height="Auto" Width="Auto" FontSize="35" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Vertical">
+            <Button x:Name="ButtonConfirm" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center"  FontFamily="Times New Roman" Height="60" Width=" 250" Click="ButtonEnd_Click">
+                <TextBlock TextWrapping="Wrap">Взять велосипед и завершить обслуживание</TextBlock>
+            </Button>
+            <Button x:Name="ButtonCancel" FontSize="20" FontFamily="Times New Roman" Height="60" Width=" 250" Margin="30" Click="ButtonCancel_Click">Отмена</Button>
+        </StackPanel>
     </Grid>
 </Window>

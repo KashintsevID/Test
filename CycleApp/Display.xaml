@@ -174,7 +174,7 @@
                             </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button Grid.Row="3" Margin="10" Width="200" Height="40" FontSize="14">Очистить историю поездок</Button>
+                    <Button x:Name="ButtonDeleteHistory" Grid.Row="3" Margin="10" Width="200" Height="40" FontSize="14" Click="ButtonDeleteHistory_Click">Очистить историю поездок</Button>
                 </Grid>
             </TabItem>
 

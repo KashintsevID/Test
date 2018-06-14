@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201806131703025_init_seventeen.Designer.cs">
       <DependentUpon>201806131703025_init_seventeen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806141209559_init_eightteen.cs" />
+    <Compile Include="Migrations\201806141209559_init_eightteen.Designer.cs">
+      <DependentUpon>201806141209559_init_eightteen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806131703025_init_seventeen.resx">
       <DependentUpon>201806131703025_init_seventeen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806141209559_init_eightteen.resx">
+      <DependentUpon>201806141209559_init_eightteen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

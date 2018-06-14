@@ -36,7 +36,7 @@ namespace CycleApp
             this.ListStations.ItemsSource = cont.Stations.OrderBy(s => s.NearestMetroStation).ToList();
             UserName.Text = currentUser.FullName;
             Balance.Text = currentUser.Balance.ToString();
-            DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id).ToList();
+            DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id && r.IsRideFinished == true).ToList();
             List<string> metroStations = new List<string>();
             foreach (Station station in cont.Stations)
             {
@@ -79,7 +79,7 @@ namespace CycleApp
             {
                 if (ride.UserId == currentUser.Id && ride.IsRideFinished == false)
                 {
-                    ActiveRide.Text = $"Текущая поездка:\n Велосипед - {ride.BicycleId}\n Начало поездки - ";
+                    ActiveRide.Text = $"Текущая поездка:\n Велосипед - {ride.BicycleId}\n Начало поездки - {ride.BeginingOfRide}";
                     return;
                 }
             }
@@ -156,9 +156,19 @@ namespace CycleApp
         private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
         {
             Balance.Text = currentUser.Balance.ToString();
-            DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id).ToList();
+            DataGridRides.ItemsSource = cont.Rides.Where(r => r.UserId == currentUser.Id && r.IsRideFinished == true).ToList();
             FilteringStations();
             CheckingActiveRide();
+        }
+
+        private void ButtonDeleteHistory_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Ride ride in cont.Rides)
+            {
+                if (ride.UserId == currentUser.Id && ride.IsRideFinished == true)
+                    cont.Rides.Remove(ride);
+            }
+            cont.SaveChanges();
         }
     }
 }

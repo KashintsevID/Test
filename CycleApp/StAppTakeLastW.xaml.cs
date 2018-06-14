@@ -1,4 +1,5 @@
-﻿using Cycle.Info.Classes;
+﻿using Cycle.Info;
+using Cycle.Info.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,21 +21,41 @@ namespace CycleApp
     /// </summary>
     public partial class StAppTakeLastW : Window
     {
+        private Context context;
+        private User currentUser;
         private Bicycle bicycle;
-        public StAppTakeLastW(Bicycle bicycle)
+        public StAppTakeLastW(Context cont, User curUser, Bicycle bike)
         {
-            this.bicycle = bicycle;
+            context = cont;
+            bicycle = bike;
+            currentUser = curUser;
             InitializeComponent();
             NumserOsSlot.Text = bicycle.CurrentSlot.ToString();
         }
 
         private void ButtonEnd_Click(object sender, RoutedEventArgs e)
         {
-            
+            bicycle.StationId = 0;
+            context.Rides.Add(new Ride
+            {
+                UserId = currentUser.Id,
+                BicycleId = bicycle.Id,
+                BeginingOfRide = DateTime.Now,
+                TotalRideTime = null,
+                MoneyPaid = 0,
+                IsRideFinished = false
+            });
+            currentUser.Balance -= 60;
+            context.SaveChanges();
+            MessageBox.Show(" Операция успешно проведена");
             var stAppEnter = new StAppEnter();
             stAppEnter.Show();
             this.Close();
+        }
 
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
