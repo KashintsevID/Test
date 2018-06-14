@@ -34,7 +34,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TabControl TabStripPlacement="Top" Name="Menu" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="Menu_SelectionChanged">
+        <TabControl TabStripPlacement="Top" Name="Menu" Grid.Row="1" Grid.ColumnSpan="2">
             <TabItem Name="Maps" Width="120" Height="45" HorizontalAlignment="Left">
                 <TabItem.Header >
                     <Image Height="30" Source="Images/location.png"></Image>
