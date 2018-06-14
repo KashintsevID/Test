@@ -35,6 +35,7 @@ namespace CycleApp
 
             context.Bicycles.AddRange(dbrepo.Bicycles);
             context.Stations.AddRange(dbrepo.Stations);
+            context.Administrators.AddRange(dbrepo.Administrators);
             context.SaveChanges();
         }
 

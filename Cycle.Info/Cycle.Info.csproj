@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Administrator.cs" />
     <Compile Include="Classes\Bicycle.cs" />
     <Compile Include="Classes\Ride.cs" />
     <Compile Include="Classes\Station.cs" />
@@ -68,9 +69,12 @@
     <Compile Include="Migrations\201806141209559_init_eightteen.Designer.cs">
       <DependentUpon>201806141209559_init_eightteen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806141825502_init_nineteen.cs" />
+    <Compile Include="Migrations\201806141825502_init_nineteen.Designer.cs">
+      <DependentUpon>201806141825502_init_nineteen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806141209559_init_eightteen.resx">
       <DependentUpon>201806141209559_init_eightteen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806141825502_init_nineteen.resx">
+      <DependentUpon>201806141825502_init_nineteen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

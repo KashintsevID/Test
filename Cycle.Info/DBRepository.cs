@@ -16,6 +16,7 @@ namespace Cycle.Info
         {
             public List<Bicycle> Bicycles { get; set; }
             public List<Station> Stations { get; set; }
+            public List<Administrator> Administrators { get; set; }
         }
 
         DataSet _dataset;
@@ -33,6 +34,14 @@ namespace Cycle.Info
             get
             {
                 return _dataset.Stations;
+            }
+        }
+
+        public IEnumerable<Administrator> Administrators
+        {
+            get
+            {
+                return _dataset.Administrators;
             }
         }
 
