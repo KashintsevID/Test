@@ -26,6 +26,9 @@ namespace CycleApp
         private User currentUser;
         public Display(Context context, User curUser)
         {
+            ReturnBike.Visibility = Visibility.Hidden;
+            TimeToDeadLine.Visibility = Visibility.Hidden;
+            ReturnBikeSoon.Visibility = Visibility.Hidden;
             currentUser = curUser;
             cont = context;
             InitializeComponent();
@@ -40,7 +43,34 @@ namespace CycleApp
                 if (!metroStations.Contains(station.NearestMetroStation))
                     metroStations.Add(station.NearestMetroStation);
             }
+
             ComboBoxMetro.ItemsSource = metroStations.OrderBy(m => m);
+            foreach (var ride in cont.Rides)
+            {
+                if (currentUser.Id==ride.UserId&&ride.IsRideFinished==false)
+                {
+                    TimeSpan totalTime = DateTime.Now - ride.BeginingOfRide;
+                    int days = totalTime.Days;
+                    int hours = totalTime.Hours;
+                    int minutes = totalTime.Minutes;
+                    if (days>=2)
+                    {
+                        MessageBox.Show("Верните велосипед на стоянку и оплатите штраф в ближайщем банкомате!");
+                        ReturnBike.Visibility = Visibility.Visible;
+                    }
+                     if(days==1&&hours>=21)
+                    {
+                        MessageBox.Show("Верните велосипед на стоянку!Осталось меньше 3х часов до того, как Вам будет выписан штраф");
+                        ReturnBikeSoon.Visibility = Visibility.Visible;
+                        TimeToDeadLine.Visibility = Visibility.Visible;
+                        int deadlineHours = 24 - hours ;
+                        int deadlineMinutes = 60 - minutes;
+                        TimeToDeadLine.Text = (deadlineHours+"ч "+deadlineMinutes+"мин").ToString();
+                    }
+
+                }
+            }
+
         }
 
         private void CheckingActiveRide()

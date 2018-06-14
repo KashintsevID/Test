@@ -25,6 +25,8 @@ namespace CycleApp
         private User currentUser;
         private Station currentStation;
         private Ride currentRide;
+       
+       
         public StAppGiveBack(Context context, User curUser, Station curStation,Ride curRide)
         {
             currentRide = curRide;
@@ -35,6 +37,13 @@ namespace CycleApp
             HiddenButton.Visibility = Visibility.Hidden;
             HiddenLabel.Visibility = Visibility.Hidden;
             NumberOfSlot.Visibility = Visibility.Hidden;
+            Surcharge.Visibility = Visibility.Hidden;
+            if (currentRide.IsRideFinished==false)
+            {
+                Surcharge.Visibility = Visibility.Visible;
+            }
+
+
         }
 
         private void ButtonBackBike_Click(object sender, RoutedEventArgs e)
@@ -68,6 +77,8 @@ namespace CycleApp
             currentStation.NumberOfBikes += 1;
            
             decimal newBalance = currentUser.Balance - currentRide.MoneyPaid;
+            if (days>=2)
+                currentUser.Balance = currentUser.Balance - currentRide.MoneyPaid-3000;
             if (newBalance >= 0)
             {
                 currentUser.Balance = currentUser.Balance - currentRide.MoneyPaid;
