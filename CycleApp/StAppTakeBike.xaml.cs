@@ -24,7 +24,7 @@ namespace CycleApp
         private Context cont;
         private User currentUser;
         private Station currentStation;
-        public StAppTakeBike(Context context,User curUser,Station curStation)
+        public StAppTakeBike(Context context, User curUser, Station curStation)
         {
             currentStation = curStation;
             currentUser = curUser;
@@ -32,43 +32,41 @@ namespace CycleApp
             InitializeComponent();
             UserName.Text = currentUser.FullName;
             Balance.Text = currentUser.Balance.ToString();
-        }
-        private bool TryGetSelectedBicycle(out Bicycle  bicycle)
-        {
-            bicycle = DGBicyclesOnStation.SelectedItem as Bicycle ;
-            if (bicycle == null)
-            {
-                MessageBox.Show("Select an item from the table");
-                return false;
-            }
-            return true;
-        }
-        private void ButtonTakyBike_Click(object sender, RoutedEventArgs e)
-        {
-            if (!TryGetSelectedBicycle(out var bicycle)) return;
-
-            if (decimal.Parse(Balance.Text) >= 60)
-            {
-                var stAppTakeLastW = new StAppTakeLastW(bicycle);
-                stAppTakeLastW.Show();
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("На вашем счёте недостаточно средств, пополните баланс через мобильное приложение"); 
-            }
+            this.DataGridBikes.ItemsSource = cont.Bicycles.Where(b => b.StationId == currentStation.Id).ToList();
         }
 
         private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
         {
             Balance.Text = currentUser.Balance.ToString();
         }
-
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        
+        private void Exit_Click_1(object sender, RoutedEventArgs e)
         {
             var stAppEnter = new StAppEnter();
             Close();
             stAppEnter.Show();
+        }
+
+        private void ButtonTakeBike_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataGridBikes.SelectedItem == null)
+            {
+                MessageBox.Show(" Выберите велосипед");
+                return;
+            }
+            else if (decimal.Parse(Balance.Text) < 60)
+            {
+                MessageBox.Show(" На вашем счёте недостаточно средств\n Пополните баланс через мобильное приложение", "Недостаточно средств");
+                return;
+            }
+            else
+            {
+                Bicycle selectedBike = DataGridBikes.SelectedItem as Bicycle;
+                var lastWarning = new StAppTakeLastW(cont, currentUser, selectedBike);
+                IsEnabled = false;
+                if (lastWarning.ShowDialog() == true || lastWarning.IsActive == false)
+                    Close();
+            }
         }
     }
 }

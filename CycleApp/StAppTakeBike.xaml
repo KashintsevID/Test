@@ -9,12 +9,12 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="0.25*"/>
-            <RowDefinition Height="0.20*"/>
-            <RowDefinition Height="0.30*"/>
-            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Button Name="ButtonUpdate" Height="40" Width="40" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="15" Click="ButtonUpdate_Click">
+        <Button Name="ButtonUpdate" Height="40" Width="40" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="15">
             <Button.Template>
                 <ControlTemplate>
                     <Grid>
@@ -23,19 +23,34 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBlock TextWrapping="Wrap" Width="270" Height="70 " TextAlignment="Center" Grid.Row="1" Text="Имя пользователя" Name="UserName" VerticalAlignment="Center" FontSize="25" FontFamily=" Times New Roman" HorizontalAlignment="Center" ></TextBlock>
-        <Label Margin="10" VerticalAlignment="Top" Grid.Row="2"  FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
-        <TextBlock Name="Balance" TextWrapping="Wrap" FontSize="20"  Grid.Row="2" Height="40" Width="200" HorizontalAlignment="Center" Margin="0,15,8.115,0" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBlock>
-        <ScrollViewer Grid.Row="3" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,-10" VerticalAlignment="Top" >
-            <Grid>
-                <DataGrid Name="DGBicyclesOnStation">
-                    <DataGridTextColumn Width="0.5*" Header="Номер велосипеда" Binding="{Binding Id}">
+        <TextBlock TextWrapping="Wrap" Width="270" Height="Auto" TextAlignment="Center" Margin="10" Grid.Row="1" Text="Имя пользователя" Name="UserName" VerticalAlignment="Center" FontSize="33" FontFamily=" Times New Roman" HorizontalAlignment="Center" ></TextBlock>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Margin="10" VerticalAlignment="Top" FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
+            <TextBlock Name="Balance" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" FontSize="30" Height="Auto" Width="200" Grid.ColumnSpan="2"></TextBlock>
+            <TextBlock FontSize="25" VerticalAlignment="Center" Margin="15">руб.</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Vertical">
+            <DataGrid x:Name="DataGridBikes" Margin="20 10" MaxHeight="150" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="2.3*" Binding="{Binding Id}">
+                        <DataGridTextColumn.Header >
+                            <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                            Велосипед
+                            </TextBlock>
+                        </DataGridTextColumn.Header>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Width="0.5*" Header="Номер слота" Binding="{Binding CurrentSlot}"></DataGridTextColumn>
-                </DataGrid>    
-            </Grid>
-        </ScrollViewer>
-        <Button Name="Exit" Content="Tooltip"  Grid.Row="4" Height="100" Width="200" HorizontalAlignment="Left" Click="Exit_Click">
+                    <DataGridTextColumn Width="2.3*" Binding="{Binding CurrentSlot}">
+                        <DataGridTextColumn.Header >
+                            <TextBlock TextWrapping="Wrap" Margin="10 0 10 0">
+                            Стойка
+                            </TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="ButtonTakeBike" Height="70" Width="180" FontSize="17" HorizontalAlignment="Center" Margin="5" Click="ButtonTakeBike_Click">Взять велосипед</Button>
+        </StackPanel>
+        <Button Name="Exit" Content="Tooltip" Grid.Row="4" Height="100" Width="200" Margin="20 10" HorizontalAlignment="Left" Click="Exit_Click_1">
             <Button.ToolTip>
                 Выйти из аккаунта
             </Button.ToolTip>
@@ -48,8 +63,5 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-    
-        <Button Height="70" Width="180" Grid.Row="3" FontSize="17" HorizontalAlignment="Right" Margin="5" Click="ButtonTakyBike_Click" >Взять велосипед</Button>
     </Grid>
-    
 </Window>
