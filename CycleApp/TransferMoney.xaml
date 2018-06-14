@@ -21,19 +21,19 @@
         <Button x:Name="ButtonReturn" Height="40" HorizontalAlignment="Left" Margin="7" Click="ButtonReturn_Click">
             <Image Height="38" Source="Images/arrow-back-outline-128.png"></Image>
         </Button>
-        <Label Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="28" Margin="20" VerticalAlignment="Top" FontWeight="SemiBold">Пополнение счета</Label>
+        <Label Foreground="White"  Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="28" Margin="20" VerticalAlignment="Top" FontWeight="SemiBold">Пополнение счета</Label>
 
         <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <Label FontFamily="Times New Roman" FontSize="17" HorizontalAlignment="Left" Margin=" 15">Номер карты</Label>
-                <TextBlock Name="NumberOfCard" Height="40" Width=" 250" FontFamily="Times New Roman" FontSize="17" Grid.Row=" 1" TextAlignment="Center" Grid.Column=" 0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin=" 0 10 40 0"></TextBlock>
+                <Label Foreground="White"  FontFamily="Times New Roman" FontSize="17" HorizontalAlignment="Left" Margin=" 15">Номер карты</Label>
+                <TextBlock Foreground="White"  Name="NumberOfCard" Height="40" Width=" 250" FontFamily="Times New Roman" FontSize="17" Grid.Row=" 1" TextAlignment="Center" Grid.Column=" 0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin=" 0 10 40 0"></TextBlock>
             </StackPanel>
             <Button Grid.Row="2" Grid.Column="1" Margin="15" Click="ButtonChangeCard_Click" FontSize="15" Width="150" Height="30">Изменить карту</Button>
         </StackPanel>
 
         <StackPanel x:Name="StackPanelSum" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <StackPanel Orientation="Horizontal">
-                <Label Grid.Row="3" FontFamily="Times New Roman" FontSize="17" Margin=" 15">Cумма</Label>
+                <Label Foreground="White"  Grid.Row="3" FontFamily="Times New Roman" FontSize="17" Margin=" 15">Cумма</Label>
                 <TextBox Name="Sum" Height=" 40" Width="200" VerticalAlignment="Top" Margin="30 15 0 0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" TextAlignment="Center"></TextBox>
                 <Label VerticalAlignment="Top" Margin="0 20 50 0" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Right" >руб.</Label>
             </StackPanel>
@@ -41,10 +41,16 @@
         </StackPanel>
         <StackPanel x:Name="StackPanelPassword" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <StackPanel Orientation="Horizontal">
-                <Label Grid.Row="3" FontFamily="Times New Roman" FontSize="17" Margin=" 15">Пароль</Label>
+                <Label Foreground="White"  Grid.Row="3" FontFamily="Times New Roman" FontSize="17" Margin=" 15">Пароль</Label>
                 <PasswordBox Name="Password" MaxLength="4" Height=" 40" Width="200" VerticalAlignment="Top" Margin="30 15 0 0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left"></PasswordBox>
             </StackPanel>
             <Button x:Name="ButtonConfirm" Grid.Row="3" Grid.Column="1" Margin="15 30 15 0" FontSize="15" Width="150" Height="30" VerticalAlignment="Top" Click="ButtonConfirm_Click">Подтвердить</Button>
         </StackPanel>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8AA3D8" Offset="0"/>
+                <GradientStop Color="#FF1F436E" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 </Window>

@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="StAppTakeBike" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8AA3D8" Offset="0"/>
+                <GradientStop Color="#FF1F436E" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -23,11 +29,11 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBlock TextWrapping="Wrap" Width="270" Height="Auto" TextAlignment="Center" Margin="10" Grid.Row="1" Text="Имя пользователя" Name="UserName" VerticalAlignment="Center" FontSize="33" FontFamily=" Times New Roman" HorizontalAlignment="Center" ></TextBlock>
+        <TextBlock Foreground="White"  TextWrapping="Wrap" Width="270" Height="Auto" TextAlignment="Center" Margin="10" Grid.Row="1" Text="Имя пользователя" Name="UserName" VerticalAlignment="Center" FontSize="33" FontFamily=" Times New Roman" HorizontalAlignment="Center" ></TextBlock>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Label Margin="10" VerticalAlignment="Top" FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
-            <TextBlock Name="Balance" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" FontSize="30" Height="Auto" Width="200" Grid.ColumnSpan="2"></TextBlock>
-            <TextBlock FontSize="25" VerticalAlignment="Center" Margin="15">руб.</TextBlock>
+            <Label Foreground="White"  Margin="10" VerticalAlignment="Top" FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Left">Баланс:</Label>
+            <TextBlock Foreground="White"  Name="Balance" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" FontSize="30" Height="Auto" Width="200" Grid.ColumnSpan="2"></TextBlock>
+            <TextBlock Foreground="White"  FontSize="25" VerticalAlignment="Center" Margin="15">руб.</TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Vertical">
             <DataGrid x:Name="DataGridBikes" Margin="20 10" MaxHeight="150" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" IsReadOnly="True">
@@ -58,7 +64,7 @@
                 <ControlTemplate>
                     <Grid>
                         <Image Source="Images/exit.png" HorizontalAlignment="Left" Height="30"></Image>
-                        <TextBlock  FontSize="21" Width=" 70" Margin="40" Grid.Row="2" HorizontalAlignment="Left" FontFamily="Times New Roman">Выйти</TextBlock>
+                        <TextBlock Foreground="White"   FontSize="21" Width=" 70" Margin="40" Grid.Row="2" HorizontalAlignment="Left" FontFamily="Times New Roman">Выйти</TextBlock>
                     </Grid>
                 </ControlTemplate>
             </Button.Template>

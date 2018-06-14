@@ -8,11 +8,12 @@
         Title="Rules_of_renting_bicycles" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="70">
+            </RowDefinition>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" FontSize="22" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Times New Roman">Rules of renting bicycles</TextBlock>
+        <TextBlock Grid.Row="0" FontSize="22" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Times New Roman">Правила пользования прокатом велосипедов</TextBlock>
         <Button Height="40" HorizontalAlignment="Left" Margin="7" Click="Back_Click">
             <Image Height="38" Source="Images/arrow-back-outline-128.png"></Image>
         </Button>

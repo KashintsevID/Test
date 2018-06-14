@@ -7,14 +7,20 @@
         mc:Ignorable="d"
         Title="StAppTakeLastW" MinHeight="570" MaxHeight="570" MinWidth="500" MaxWidth="500">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8AA3D8" Offset="0"/>
+                <GradientStop Color="#FF1F436E" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.4*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Orientation="Vertical">
-            <TextBlock FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Times New Roman">Bозьмите выбранный велосипед из слота номер</TextBlock>
-            <TextBlock Name="NumserOsSlot" Height="Auto" Width="Auto" FontSize="35" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Foreground="White"  FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Times New Roman">Bозьмите выбранный велосипед из слота номер</TextBlock>
+            <TextBlock Foreground="White"  Name="NumserOsSlot" Height="Auto" Width="Auto" FontSize="35" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Vertical">
             <Button x:Name="ButtonConfirm" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center"  FontFamily="Times New Roman" Height="60" Width=" 250" Click="ButtonEnd_Click">
